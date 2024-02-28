@@ -1,0 +1,13 @@
+{
+    "country" : "Germany",
+    "persons": [
+        {
+            "id": 6453625,
+            "name": "Mueller"
+        },
+        {
+            "id": 72534,
+            "name": "Maier"
+        }
+    ]
+}
