@@ -10,7 +10,6 @@ using namespace std;
 namespace fs = std::filesystem;
 
 #include <jsoncpp/json/json.h>
-// Letzter Test
 // Hilfetext (David Prinz)
 const char * const HilfeText = {
     "Usage: options [OPTIONS] file ... \n" \
