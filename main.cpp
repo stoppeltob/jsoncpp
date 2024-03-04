@@ -9,7 +9,8 @@ using namespace std;
 
 namespace fs = std::filesystem;
 
-#include <jsoncpp/json/json.h>
+#include <include/jsoncpp>
+
 // Hilfetext (David Prinz, Tobias Stoppelkamp)
 const char * const HilfeText = {
     "Create a Windows Batch file based on the provided JSON configuration.\n" \
