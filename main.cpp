@@ -9,7 +9,7 @@ using namespace std;
 
 namespace fs = std::filesystem;
 
-#include <include/jsoncpp>
+#include <jsoncpp/json/json.h>
 
 // Hilfetext (David Prinz, Tobias Stoppelkamp)
 const char * const HilfeText = {
