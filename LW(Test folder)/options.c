@@ -1,4 +1,3 @@
-/*
 #include "options.h"
 #include <getopt.h>
 #include <stdio.h>
@@ -61,4 +60,3 @@ while ((option = getopt_long(argc, argv, "hv", long_options, NULL)) != -1) {
 		}
 	}
 }
-*/

@@ -9,6 +9,11 @@ using namespace std;
 
 namespace fs = std::filesystem;
 
+//include C header file
+extern "C" {
+    #include "header.h"
+}
+
 #include <jsoncpp/json/json.h>
 
 // Hilfetext (David Prinz, Tobias Stoppelkamp)
@@ -23,6 +28,8 @@ const char * const HilfeText = {
 };
 
 int main(const int argc, const char **argv) {
+    //commandlinearguments
+    processOptions(argc, argv);
 
     //Simples Beispiel zum auslesen einer json Datei
     if(argc != 2) {
