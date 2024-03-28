@@ -16,16 +16,6 @@ extern "C" {
 
 #include <jsoncpp/json/json.h>
 
-// Hilfetext (David Prinz, Tobias Stoppelkamp)
-const char * const HilfeText = {
-    "Create a Windows Batch file based on the provided JSON configuration.\n" \
-    "Usage: options [OPTIONS] file ... \n" \
-    "-h, --help         Hier die Funktion, die beschrieben werden muessen\n" \
-    "  -o, --output=FILENAME     Set the output file name\n" \
-    "  -v, --version             Show version information\n" \
-    "\n" \
-    "Author team: David Prinz david.prinz1123@gmail.com, Tobias Stoppelkamp tobias.stoppelkamp05@gmail.com"
-};
 
 int main(const int argc, const char **argv) {
     //commandlinearguments
