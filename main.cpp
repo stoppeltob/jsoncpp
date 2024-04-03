@@ -11,7 +11,7 @@ namespace fs = std::filesystem;
 
 //include C header file
 extern "C" {
-    #include "header.h"
+#include "header.h"
 }
 
 #include <jsoncpp/json/json.h>
