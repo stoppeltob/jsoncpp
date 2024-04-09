@@ -4,7 +4,7 @@
 #include <stdlib.h>
 //Options.c made by LW
 
-// Helptext for the Programm (made by David Prinz, Tobias Stoppelkamp, Lion Wicki, Phillip Assfalg)
+// Helptext for the Programm (made by David Prinz, Tobias Stoppelkamp, Lion Wicki, Philipp Assfalg)
 const char * const Helptxt = {
     "Create a Windows Batch file based on the provided JSON configuration.\n" \
     "Usage: options [OPTIONS] file ... \n" \
