@@ -16,7 +16,7 @@ const char * const Helptxt = {
 	"David Prinz david.prinz1123@gmail.com\n"
 	"Tobias Stoppelkamp tobias.stoppelkamp05@gmail.com\n"
 	"Lion Wicki lionwicki@gmail.com\n"
-	"Phillip Assfalg E-mail to be added"
+	"Phillip Assfalg philippassfalg2005@gmail.com\n"
 };
 
 const char Version ="Version 1.0\n");  
