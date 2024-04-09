@@ -19,7 +19,7 @@ extern "C" {
 
 int main(const int argc, const char **argv) {
     //commandlinearguments
-    processOptions(argc, argv);
+  //  processOptions(argc, argv); @lion da gibt es einen Fehler beim Compilen 
 
     //Simples Beispiel zum auslesen einer json Datei
     if(argc != 2) {
