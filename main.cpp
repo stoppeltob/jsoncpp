@@ -42,6 +42,8 @@ int main(const int argc, const char **argv) {
             cerr << "Datei ist ungueltig: " << path.string() << endl;
             return EXIT_FAILURE;
         }
+        ofstream batchFile("test");
+        batchFile << "irgendwas";
 
         //Zuerst wird das Land ausgeben
         cout << "Land: " << root["country"].asString() << endl;
