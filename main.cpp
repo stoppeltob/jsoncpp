@@ -42,7 +42,8 @@ int main(const int argc, const char **argv) {
             cerr << "Datei ist ungueltig: " << path.string() << endl;
             return EXIT_FAILURE;
         }
-        ofstream batchFile("test");
+        string dateiname = root["outputfile"].asString();
+        ofstream batchFile(dateiname);
         batchFile << "irgendwas";
 
         //Zuerst wird das Land ausgeben

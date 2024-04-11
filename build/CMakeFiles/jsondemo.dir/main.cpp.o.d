@@ -1,8 +1,8 @@
 CMakeFiles/jsondemo.dir/main.cpp.o: \
- /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/main.cpp \
+ /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/main.cpp \
  /usr/include/stdc-predef.h \
- /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/include/config.h \
- /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/path/include/pathtest.h \
+ /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/include/config.h \
+ /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path/include/pathtest.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -185,7 +185,7 @@ CMakeFiles/jsondemo.dir/main.cpp.o: \
  /usr/include/c++/11/bits/refwrap.h \
  /usr/include/c++/11/ext/aligned_buffer.h \
  /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
- /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/header.h \
+ /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/header.h \
  /usr/include/jsoncpp/json/json.h /usr/include/jsoncpp/json/config.h \
  /usr/include/c++/11/cstddef /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_uninitialized.h \

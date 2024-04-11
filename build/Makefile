@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp
+CMAKE_SOURCE_DIR = /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/build
+CMAKE_BINARY_DIR = /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/build/CMakeFiles /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

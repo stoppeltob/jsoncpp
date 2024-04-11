@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp
+CMAKE_SOURCE_DIR = /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/build
+CMAKE_BINARY_DIR = /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build
 
 # Utility rule file for astyle.
 
@@ -67,7 +67,7 @@ include CMakeFiles/astyle.dir/compiler_depend.make
 include CMakeFiles/astyle.dir/progress.make
 
 CMakeFiles/astyle:
-	astyle -r "/home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/*.h" "/home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/*.cpp" --exclude=build
+	astyle -r "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/*.h" "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/*.cpp" --exclude=build
 
 astyle: CMakeFiles/astyle
 astyle: CMakeFiles/astyle.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/astyle.dir/clean:
 .PHONY : CMakeFiles/astyle.dir/clean
 
 CMakeFiles/astyle.dir/depend:
-	cd /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/build /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/build /home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/build/CMakeFiles/astyle.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles/astyle.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/astyle.dir/depend
 

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DVERSION=v0.0.1
 
-CXX_INCLUDES = -I/home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/include -I/home/david/dhbw/programmieren1/c++/Porgrammentwurf/jsoncpp/path/include
+CXX_INCLUDES = -I/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/include -I/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path/include
 
 CXX_FLAGS = -std=gnu++20
 
