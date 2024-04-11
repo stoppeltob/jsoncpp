@@ -21,7 +21,7 @@ bool hideshellcheck(const Json::Value& root) {
 
 int main(const int argc, const char **argv) {
     //commandlinearguments
-    //  processOptions(argc, argv); @lion da gibt es einen Fehler beim Compilen
+  //  processOptions(argc, argv); @lion da gibt es einen Fehler beim Compilen 
 
     //Simples Beispiel zum auslesen einer json Datei
     if(argc != 2) {
@@ -46,45 +46,45 @@ int main(const int argc, const char **argv) {
         }
 
         {
-            const Json::Value entries = root["entries"];
+            const Json::Value entries = root["entries"];  
 
-            //Requirement Task 8
+            //Requirement Task 8 
             string dateiname = root["outputfile"].asString();
-            ofstream batchFile(dateiname);
-            batchFile << "@ECHO OFF\n";
+        ofstream batchFile(dateiname);
+        batchFile << "@ECHO OFF\n";
 
             //Requirement Task 9
-            // Is trying, if hideshell is true or false
-            if (hideshellcheck(root)) {
-                batchFile << " /c";
-            } else {
-                batchFile << " /k";
-            }
-
-            if(entries.isArray()) {
-                //Requirement Task 10
-                for (const auto& entry : entries) {
-                    //Requirement Task 11
-                    if(entry["type"].asString()=="ENV") {
+         // Is trying, if hideshell is true or false 
+        if (hideshellcheck(root)) {
+           batchFile << " /c";
+        } else {
+            batchFile << " /k";
+        }
+        
+        if(entries.isArray()){
+            //Requirement Task 10
+            for (const auto& entry : entries) {
+                //Requirement Task 11
+                if(entry["type"].asString()=="ENV"){
                         string key = entry["key"].asString();
                         string value = entry["value"].asString();
                     }
                     batchFile << entry["key"].asString()  << entry["value"].asString();
-                    //Requirement Task 12
-                    if(entry["type"].asString()=="EXE") {
+                //Requirement Task 12
+                 if(entry["type"].asString()=="EXE"){
                         string command = entry["command"].asString();
                     }
                     batchFile << entry["command"].asString();
-                    //Requirement Task 13
-                    if(entry["type"].asString()=="path") {
+                //Requirement Task 13
+                    if(entry["type"].asString()=="path"){
                         string path = entry["path"].asString();
                     }
                     batchFile << entry["path"].asString();
+                    
 
-
-                }
             }
-            return EXIT_SUCCESS;
         }
+        return EXIT_SUCCESS;
     }
+}
 }
