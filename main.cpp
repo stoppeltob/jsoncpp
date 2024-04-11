@@ -46,20 +46,20 @@ int main(const int argc, const char **argv) {
         }
         string dateiname = root["outputfile"].asString();
         ofstream batchFile(dateiname);
-        batchFile << "irgendwas";
+        batchFile << "@ECHO OFF\n";
 
         // Überprüfen, ob die Shell ausgeblendet werden soll
         if (hideshellcheck(root)) {
-            cout << "Die Shell soll ausgeblendet werden." << endl;
+           batchFile << " /c";
         } else {
-            cout << "Die Shell soll nicht ausgeblendet werden." << endl;
+            batchFile << " /k";
         }
 
         //Zuerst wird das Land ausgeben
         cout << "Land: " << root["country"].asString() << endl;
 
         {
-            //Werte aus dem Array
+            //Werte aus dem Array "persons"
             const Json::Value persons = root["persons"];
 
             if(persons.isArray())
@@ -69,8 +69,22 @@ int main(const int argc, const char **argv) {
                     cout << "Id: " << person["id"].asInt() << endl;
                     //.....
                 }
+
         }
-        
+
+        {
+            //Werte aus dem Array "entries"
+            const Json::Value entries = root["entries"];
+
+            if(entries.isArray())
+                for (Json::Value::ArrayIndex i = 0; i < entries.size(); ++i) {
+                    auto entry = entries[i];
+
+                    // Hier können Sie die Daten für jeden Eintrag verarbeiten
+                }
+
+        }
+
         return EXIT_SUCCESS;
     }
 }
