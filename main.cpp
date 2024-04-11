@@ -1,7 +1,5 @@
 #include <config.h>
-
 #include <pathtest.h>
-
 #include <iostream>
 #include <fstream>
 #include <filesystem>
@@ -16,6 +14,10 @@ extern "C" {
 
 #include <jsoncpp/json/json.h>
 
+// In this Part the Programm is checking if hideshell is true or not
+bool hideshellcheck(const Json::Value& root) {
+    return root.get("hideshell", false).asBool();
+}
 
 int main(const int argc, const char **argv) {
     //commandlinearguments
@@ -45,6 +47,13 @@ int main(const int argc, const char **argv) {
         string dateiname = root["outputfile"].asString();
         ofstream batchFile(dateiname);
         batchFile << "irgendwas";
+
+        // Überprüfen, ob die Shell ausgeblendet werden soll
+        if (hideshellcheck(root)) {
+            cout << "Die Shell soll ausgeblendet werden." << endl;
+        } else {
+            cout << "Die Shell soll nicht ausgeblendet werden." << endl;
+        }
 
         //Zuerst wird das Land ausgeben
         cout << "Land: " << root["country"].asString() << endl;
