@@ -44,47 +44,47 @@ int main(const int argc, const char **argv) {
             cerr << "Datei ist ungueltig: " << path.string() << endl;
             return EXIT_FAILURE;
         }
-        string dateiname = root["outputfile"].asString();
+
+        {
+            const Json::Value entries = root["entries"];  
+
+            //Requirement Task 8 
+            string dateiname = root["outputfile"].asString();
         ofstream batchFile(dateiname);
         batchFile << "@ECHO OFF\n";
 
-        // Überprüfen, ob die Shell ausgeblendet werden soll
+            //Requirement Task 9
+         // Is trying, if hideshell is true or false 
         if (hideshellcheck(root)) {
            batchFile << " /c";
         } else {
             batchFile << " /k";
         }
+        
+        if(entries.isArray()){
+            //Requirement Task 10
+            for (const auto& entry : entries) {
+                //Requirement Task 11
+                if(entry["type"].asString()=="ENV"){
+                        string key = entry["key"].asString();
+                        string value = entry["value"].asString();
+                    }
+                    batchFile << entry["key"].asString()  << entry["value"].asString();
+                //Requirement Task 12
+                 if(entry["type"].asString()=="EXE"){
+                        string command = entry["command"].asString();
+                    }
+                    batchFile << entry["command"].asString();
+                //Requirement Task 13
+                    if(entry["type"].asString()=="path"){
+                        string path = entry["path"].asString();
+                    }
+                    batchFile << entry["path"].asString();
+                    
 
-        //Zuerst wird das Land ausgeben
-        cout << "Land: " << root["country"].asString() << endl;
-
-        {
-            //Werte aus dem Array "persons"
-            const Json::Value persons = root["persons"];
-
-            if(persons.isArray())
-                for (Json::Value::ArrayIndex i = 0; i < persons.size(); ++i) {
-                    auto person = persons[i];
-
-                    cout << "Id: " << person["id"].asInt() << endl;
-                    //.....
-                }
-
+            }
         }
-
-        {
-            //Werte aus dem Array "entries"
-            const Json::Value entries = root["entries"];
-
-            if(entries.isArray())
-                for (Json::Value::ArrayIndex i = 0; i < entries.size(); ++i) {
-                    auto entry = entries[i];
-
-                    // Hier können Sie die Daten für jeden Eintrag verarbeiten
-                }
-
-        }
-
         return EXIT_SUCCESS;
     }
+}
 }

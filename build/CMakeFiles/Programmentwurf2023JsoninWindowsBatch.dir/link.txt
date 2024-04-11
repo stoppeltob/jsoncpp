@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/main.cpp.o -o Programmentwurf2023JsoninWindowsBatch  path/libpathlib.a -ljsoncpp 

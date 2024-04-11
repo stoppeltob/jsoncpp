@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp
+CMAKE_SOURCE_DIR = /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build
+CMAKE_BINARY_DIR = /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/CMakeFiles /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -130,17 +130,17 @@ astyle/fast:
 .PHONY : astyle/fast
 
 #=============================================================================
-# Target rules for targets named jsondemo
+# Target rules for targets named Programmentwurf2023JsoninWindowsBatch
 
 # Build rule for target.
-jsondemo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 jsondemo
-.PHONY : jsondemo
+Programmentwurf2023JsoninWindowsBatch: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Programmentwurf2023JsoninWindowsBatch
+.PHONY : Programmentwurf2023JsoninWindowsBatch
 
 # fast build rule for target.
-jsondemo/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsondemo.dir/build.make CMakeFiles/jsondemo.dir/build
-.PHONY : jsondemo/fast
+Programmentwurf2023JsoninWindowsBatch/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/build.make CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/build
+.PHONY : Programmentwurf2023JsoninWindowsBatch/fast
 
 #=============================================================================
 # Target rules for targets named pathlib
@@ -160,7 +160,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsondemo.dir/build.make CMakeFiles/jsondemo.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/build.make CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -168,7 +168,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsondemo.dir/build.make CMakeFiles/jsondemo.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/build.make CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -176,7 +176,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsondemo.dir/build.make CMakeFiles/jsondemo.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/build.make CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -188,7 +188,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... astyle"
-	@echo "... jsondemo"
+	@echo "... Programmentwurf2023JsoninWindowsBatch"
 	@echo "... pathlib"
 	@echo "... main.o"
 	@echo "... main.i"

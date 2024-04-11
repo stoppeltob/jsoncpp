@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp
+CMAKE_SOURCE_DIR = /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build
+CMAKE_BINARY_DIR = /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/path//CMakeFiles/progress.marks
-	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles 0
+	cd /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/CMakeFiles /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/path//CMakeFiles/progress.marks
+	cd /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path/clean
+	cd /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path/preinstall
+	cd /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path/preinstall
+	cd /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 path/CMakeFiles/pathlib.dir/rule:
-	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path/CMakeFiles/pathlib.dir/rule
+	cd /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path/CMakeFiles/pathlib.dir/rule
 .PHONY : path/CMakeFiles/pathlib.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ pathlib: path/CMakeFiles/pathlib.dir/rule
 
 # fast build rule for target.
 pathlib/fast:
-	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/build
+	cd /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build && $(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/build
 .PHONY : pathlib/fast
 
 src/pathtest.o: src/pathtest.cpp.o
@@ -135,7 +135,7 @@ src/pathtest.o: src/pathtest.cpp.o
 
 # target to build an object file
 src/pathtest.cpp.o:
-	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/src/pathtest.cpp.o
+	cd /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build && $(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/src/pathtest.cpp.o
 .PHONY : src/pathtest.cpp.o
 
 src/pathtest.i: src/pathtest.cpp.i
@@ -143,7 +143,7 @@ src/pathtest.i: src/pathtest.cpp.i
 
 # target to preprocess a source file
 src/pathtest.cpp.i:
-	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/src/pathtest.cpp.i
+	cd /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build && $(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/src/pathtest.cpp.i
 .PHONY : src/pathtest.cpp.i
 
 src/pathtest.s: src/pathtest.cpp.s
@@ -151,7 +151,7 @@ src/pathtest.s: src/pathtest.cpp.s
 
 # target to generate assembly for a file
 src/pathtest.cpp.s:
-	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/src/pathtest.cpp.s
+	cd /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build && $(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/src/pathtest.cpp.s
 .PHONY : src/pathtest.cpp.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

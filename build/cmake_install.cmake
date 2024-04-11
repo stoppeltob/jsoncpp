@@ -1,4 +1,4 @@
-# Install script for directory: /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp
+# Install script for directory: /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/path/cmake_install.cmake")
+  include("/home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/path/cmake_install.cmake")
 
 endif()
 
@@ -56,5 +56,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

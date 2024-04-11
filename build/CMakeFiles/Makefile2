@@ -54,16 +54,16 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp
+CMAKE_SOURCE_DIR = /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build
+CMAKE_BINARY_DIR = /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/jsondemo.dir/all
+all: CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/all
 all: path/all
 .PHONY : all
 
@@ -73,7 +73,7 @@ preinstall: path/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/astyle.dir/clean
-clean: CMakeFiles/jsondemo.dir/clean
+clean: CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/clean
 clean: path/clean
 .PHONY : clean
 
@@ -99,14 +99,14 @@ path/clean: path/CMakeFiles/pathlib.dir/clean
 CMakeFiles/astyle.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/astyle.dir/build.make CMakeFiles/astyle.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/astyle.dir/build.make CMakeFiles/astyle.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles --progress-num= "Built target astyle"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/CMakeFiles --progress-num= "Built target astyle"
 .PHONY : CMakeFiles/astyle.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/astyle.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/astyle.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/CMakeFiles 0
 .PHONY : CMakeFiles/astyle.dir/rule
 
 # Convenience name for target.
@@ -119,30 +119,30 @@ CMakeFiles/astyle.dir/clean:
 .PHONY : CMakeFiles/astyle.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/jsondemo.dir
+# Target rules for target CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir
 
 # All Build rule for target.
-CMakeFiles/jsondemo.dir/all: path/CMakeFiles/pathlib.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsondemo.dir/build.make CMakeFiles/jsondemo.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsondemo.dir/build.make CMakeFiles/jsondemo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles --progress-num=1,2 "Built target jsondemo"
-.PHONY : CMakeFiles/jsondemo.dir/all
+CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/all: path/CMakeFiles/pathlib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/build.make CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/build.make CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/CMakeFiles --progress-num=1,2 "Built target Programmentwurf2023JsoninWindowsBatch"
+.PHONY : CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/jsondemo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/jsondemo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles 0
-.PHONY : CMakeFiles/jsondemo.dir/rule
+CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/CMakeFiles 0
+.PHONY : CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/rule
 
 # Convenience name for target.
-jsondemo: CMakeFiles/jsondemo.dir/rule
-.PHONY : jsondemo
+Programmentwurf2023JsoninWindowsBatch: CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/rule
+.PHONY : Programmentwurf2023JsoninWindowsBatch
 
 # clean rule for target.
-CMakeFiles/jsondemo.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsondemo.dir/build.make CMakeFiles/jsondemo.dir/clean
-.PHONY : CMakeFiles/jsondemo.dir/clean
+CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/build.make CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/clean
+.PHONY : CMakeFiles/Programmentwurf2023JsoninWindowsBatch.dir/clean
 
 #=============================================================================
 # Target rules for target path/CMakeFiles/pathlib.dir
@@ -151,14 +151,14 @@ CMakeFiles/jsondemo.dir/clean:
 path/CMakeFiles/pathlib.dir/all:
 	$(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/depend
 	$(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles --progress-num=3,4 "Built target pathlib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/CMakeFiles --progress-num=3,4 "Built target pathlib"
 .PHONY : path/CMakeFiles/pathlib.dir/all
 
 # Build rule for subdir invocation for target.
 path/CMakeFiles/pathlib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path/CMakeFiles/pathlib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/build/CMakeFiles 0
 .PHONY : path/CMakeFiles/pathlib.dir/rule
 
 # Convenience name for target.
