@@ -1,5 +1,0 @@
-# ninja log v5
-0	10	1708953020251264237	path/CMakeFiles/pathlib.dir/src/pathtest.cpp.o	2bb29803c4b88e6e
-623	715	1708953649701201721	jsondemo	26072de0e95edcc2
-10	22	1708953020271264244	path/libpathlib.a	3716b8804b59770e
-0	623	1708953649611201732	CMakeFiles/jsondemo.dir/main.cpp.o	4ca17e1fd2ee84a6

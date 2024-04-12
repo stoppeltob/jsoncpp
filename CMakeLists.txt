@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Set some basic project attributes
-project (jsondemo
+project (Programmentwurf2023JsoninWindowsBatch
 	VERSION 1.0
 	DESCRIPTION "Eine Applikation um jsoncpp zu demonstrieren")
 
