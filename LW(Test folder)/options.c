@@ -35,7 +35,7 @@ void processOptions(int argc, char *argv[]) {
 	
 int option_index = 0;
 
-//Defines longopt command-line arguments 
+//defines longopt command-line arguments 
 static const struct option longopts[] = 
 {
 	// takes no arguments --> hier koennte man das inputfile definieren !!!
