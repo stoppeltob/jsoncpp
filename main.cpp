@@ -48,6 +48,7 @@ int main(const int argc, const char **argv) {
         {
             const Json::Value entries = root["entries"];
 
+            //line 51- 83 Part from David Prinz 
             //Requirement Task 8
             string dateiname = root["outputfile"].asString();
             ofstream batchFile(dateiname);
