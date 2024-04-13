@@ -19,7 +19,7 @@ const char * const Helptxt = {
 	"Phillip Assfalg philippassfalg2005@gmail.com\n"
 };
 
-const char Version ="Version 1.0\n");  
+const char * Version ="Version 1.0\n";  
 
 void printHelptxt() {
 printf("%s", Helptxt);
@@ -38,13 +38,13 @@ int option_index = 0;
 static const struct option longopts[] = 
 {
 	// takes no arguments --> hier koennte man das inputfile definieren !!!
-	{"help",no argument, NULL,'h'}
-	{"version",no_argument,NULL,'v'},
+	{ "help", no_argument, NULL, 'h' }, 
+	{ "version", no_argument, NULL, 'v' }, 
 	{0,0,0,0} // Termination
 };
 
-while ((option = getopt_long(argc, argv, "hv", long_options, NULL)) != -1) {
-	switch (option) {
+while ((option_index = getopt_long(argc, argv, "hv", longopts, NULL)) != -1) {
+	switch (option_index) {
 		case 'h':
 			printHelptxt();
 			exit(0);
