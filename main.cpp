@@ -21,7 +21,7 @@ bool hideshellcheck(const Json::Value& root) {
 
 int main(const int argc, const char **argv) {
     //commandlinearguments
-    //  processOptions(argc, argv); @lion da gibt es einen Fehler beim Compilen
+    // processOptions(argc, argv); @lion da gibt es einen Fehler beim Compilen
 
     //Simples Beispiel zum auslesen einer json Datei
     if(argc != 2) {
@@ -29,6 +29,7 @@ int main(const int argc, const char **argv) {
         return EXIT_FAILURE;
     }
     else {
+        ////Requirement Task 4, 5, 6, 7 ??
         auto path = fs::weakly_canonical(argv[1]);
 
         if(!fs::exists(path)) {
