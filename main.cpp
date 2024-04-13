@@ -3,15 +3,16 @@
 #include <iostream>
 #include <fstream>
 #include <filesystem>
+#include <options.h>
 using namespace std;
 
 namespace fs = std::filesystem;
-
+/*
 //include C header file
 extern "C" {
-#include "header.h"
+#include <options.h>
 }
-
+*/
 #include <jsoncpp/json/json.h>
 
 // In this Part the Programm is checking if hideshell is true or not
@@ -21,7 +22,7 @@ bool hideshellcheck(const Json::Value& root) {
 
 int main(const int argc, const char **argv) {
     //commandlinearguments
-    // processOptions(argc, argv); @lion da gibt es einen Fehler beim Compilen
+    processOptions(argc, argv); 
 
     //Simples Beispiel zum auslesen einer json Datei
     if(argc != 2) {
