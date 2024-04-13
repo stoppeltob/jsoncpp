@@ -26,7 +26,7 @@ printf("%s", Helptxt);
 }
 
 void printVersion() {
-printf(Version);	
+printf("%s", Version);	
 }
 
 //processes the Options given by main.cpp
