@@ -1,5 +1,5 @@
 CMakeFiles/JsoninBatch2023.dir/main.cpp.o: \
- /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/main.cpp \
+ /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/main.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

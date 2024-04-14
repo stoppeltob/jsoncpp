@@ -1,4 +1,4 @@
-# Install script for directory: /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/path
+# Install script for directory: /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
