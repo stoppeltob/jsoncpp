@@ -22,7 +22,7 @@ bool hideshellcheck(const Json::Value& root) {
 
 int main(const int argc, const char **argv) {
     //commandlinearguments
-    processOptions(argc, argv); 
+   // processOptions(argc, argv); 
 
     //Simples Beispiel zum auslesen einer json Datei
     if(argc != 2) {
