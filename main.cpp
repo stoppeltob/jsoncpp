@@ -15,7 +15,7 @@ extern "C" {
 */
 #include <jsoncpp/json/json.h>
 
-// In this Part the Programm is checking if hideshell is true or not
+// In this Part the Programm is checking if hideshell is true or not 1234
 bool hideshellcheck(const Json::Value& root) {
     return root.get("hideshell", false).asBool();
 }
