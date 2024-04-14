@@ -1,36 +1,131 @@
-#include <config.h>
-#include <pathtest.h>
 #include <iostream>
 #include <fstream>
 #include <filesystem>
-#include <options.h>
-using namespace std;
-
-namespace fs = std::filesystem;
-/*
-//include C header file
-extern "C" {
-#include <options.h>
-}
-*/
 #include <jsoncpp/json/json.h>
+#include <vector>
+#include <string>
+#include <cstdlib> // for getenv
+#include <sstream>
+#include <unistd.h> // for environ
 
-// In this Part the Programm is checking if hideshell is true or not 1234
+using namespace std;
+namespace fs = std::filesystem;
+
+// In this Part the Program is checking if hideshell is true or not
 bool hideshellcheck(const Json::Value& root) {
     return root.get("hideshell", false).asBool();
 }
 
+class EnvironmentEntry {
+public:
+    string name;
+    string value;
+    string type;
+
+    EnvironmentEntry(const string& n, const string& v, const string& t)
+        : name(n), value(v), type(t) {}
+};
+
+class EnvironmentManager {
+private:
+    vector<EnvironmentEntry> entries;
+
+public:
+    void populateEntries() {
+        char** env = environ;  // Fixed: Access to global environ
+        for (int i = 0; env[i] != nullptr; ++i) {
+            string envVar(env[i]);
+            size_t equalsPos = envVar.find('=');
+            if (equalsPos != string::npos) {
+                string name = envVar.substr(0, equalsPos);
+                string value = envVar.substr(equalsPos + 1);
+                entries.push_back(EnvironmentEntry(name, value, "ENV"));
+            }
+        }
+
+        string pathEnv = getenv("PATH");
+        istringstream pathStream(pathEnv);
+        string path;
+        while (getline(pathStream, path, fs::path::preferred_separator)) {
+            for (const auto& entry : fs::directory_iterator(path)) {
+                if (is_regular_file(entry.path()) && fs::status(entry.path()).permissions() & fs::perms::owner_exec) {
+                    string appName = entry.path().filename().string();
+                    string appPath = entry.path().string();
+                    entries.push_back(EnvironmentEntry("application", appName + " " + appPath, "EXE"));
+                }
+            }
+        }
+
+        entries.push_back(EnvironmentEntry("PATH", pathEnv, "PATH"));
+    }
+
+    void printEntries() const {
+        for (const auto& entry : entries) {
+            cout << "Type: " << entry.type << ", Name: " << entry.name << ", Value: " << entry.value << "\n";
+        }
+    }
+
+    void readEntriesFromFile(const string& filename) {
+        ifstream file(filename);
+        if (!file.is_open()) {
+            cerr << "Error: Unable to open file " << filename << endl;
+            return;
+        }
+
+        string line;
+        string outputfile;
+        bool hideshell = false;
+
+        while (getline(file, line)) {
+            if (line.find("outputfile") != string::npos) {
+                size_t pos = line.find(":");
+                if (pos != string::npos)
+                    outputfile = line.substr(pos + 1);
+            }
+            if (line.find("hideshell") != string::npos) {
+                size_t pos = line.find(":");
+                if (pos != string::npos)
+                    hideshell = (line.substr(pos + 1) == "true") ? true : false;
+            }
+        }
+
+        if (!outputfile.empty()) {
+            createBatchFile(outputfile, "cmd.exe", hideshell);
+        } else {
+            cerr << "Error: 'outputfile' not found in the file." << endl;
+        }
+    }
+
+    void createBatchFile(const string& filename, const string& consolePath, bool hideShell) const {
+        ofstream batchFile(filename + ".bat");
+        if (!batchFile.is_open()) {
+            cerr << "Error: Unable to create batch file " << filename << ".bat" << endl;
+            return;
+        }
+
+        batchFile << (hideShell ? "@ECHO OFF\n" : "@ECHO ON\n");
+        batchFile << "start \"\" \"" << consolePath << "\"" << (hideShell ? " /B" : "") << "\n";
+
+        if (hideShell)
+            batchFile << "exit\n";
+
+        batchFile.close();
+
+        cout << "Batch file " << filename << ".bat" << " created successfully." << endl;
+    }
+};
+
 int main(const int argc, const char **argv) {
     //commandlinearguments
-   // processOptions(argc, argv); 
+    //processOptions(argc,argv)
 
-    //Simples Beispiel zum auslesen einer json Datei
+    // Simples Beispiel zum Auslesen einer JSON
     if(argc != 2) {
         cerr << "Bitte eine Datei angeben!" << endl;
         return EXIT_FAILURE;
     }
     else {
-        ////Requirement Task 4, 5, 6, 7 ??
+
         auto path = fs::weakly_canonical(argv[1]);
 
         if(!fs::exists(path)) {
@@ -47,48 +142,37 @@ int main(const int argc, const char **argv) {
             return EXIT_FAILURE;
         }
 
-        {
-            const Json::Value entries = root["entries"];
+        const Json::Value entries = root["entries"];
+        string dateiname = root["outputfile"].asString();
+        ofstream batchFile(dateiname);
+        batchFile << "@ECHO OFF\n";
 
-            //line 51- 83 Part from David Prinz 
-            //Requirement Task 8
-            string dateiname = root["outputfile"].asString();
-            ofstream batchFile(dateiname);
-            batchFile << "@ECHO OFF\n";
-
-            //Requirement Task 9
-            // Is trying, if hideshell is true or false
-            if (hideshellcheck(root)) {
-                batchFile << " /c";
-            } else {
-                batchFile << " /k";
-            }
-
-            if(entries.isArray()) {
-                //Requirement Task 10
-                for (const auto& entry : entries) {
-                    //Requirement Task 11
-                    if(entry["type"].asString()=="ENV") {
-                        string key = entry["key"].asString();
-                        string value = entry["value"].asString();
-                    }
-                    batchFile << entry["key"].asString()  << entry["value"].asString();
-                    //Requirement Task 12
-                    if(entry["type"].asString()=="EXE") {
-                        string command = entry["command"].asString();
-                    }
-                    batchFile << entry["command"].asString();
-                    //Requirement Task 13
-                    if(entry["type"].asString()=="path") {
-                        string path = entry["path"].asString();
-                    }
-                    batchFile << entry["path"].asString();
-
-
-                }
-                batchFile <<"\n@ECHO ON";
-            }
-            return EXIT_SUCCESS;
+        if (hideshellcheck(root)) {
+            batchFile << " /c";
+        } else {
+            batchFile << " /k";
         }
+
+        if(entries.isArray()) {
+            for (const auto& entry : entries) {
+                if(entry["type"].asString()=="ENV") {
+                    string key = entry["key"].asString();
+                    string value = entry["value"].asString();
+                }
+                batchFile << entry["key"].asString()  << entry["value"].asString();
+
+                if(entry["type"].asString()=="EXE") {
+                    string command = entry["command"].asString();
+                }
+                batchFile << entry["command"].asString();
+
+                if(entry["type"].asString()=="path") {
+                    string path = entry["path"].asString();
+                }
+                batchFile << entry["path"].asString();
+            }
+            batchFile <<"\n@ECHO ON";
+        }
+        return EXIT_SUCCESS;
     }
 }
