@@ -159,29 +159,66 @@ int main(const int argc, const char **argv) {
         // Requirement funtional Task 10
         // In this part of the code, a for-loop is used to read and save any number of entries under a JASON array "entries"
         if(entries.isArray()) {
+            string exeCommands;
+            string envCommands;
+            string pathCommands;
+            string application;
+
             for (const auto& entry : entries) {
-                // Requirement funtional Task 11
-                //In this part of the code, entries of type "ENV" are stored with their "key" and "value".
-                if(entry["type"].asString()=="ENV") {
-                    string key = entry["key"].asString();
-                    string value = entry["value"].asString();
-                }
-                batchFile << entry["key"].asString()  << entry["value"].asString();
-                // Requirement funtional Task 12
-                //In this part of the code, entries of type "EXE" are stored with their call "command"
-                if(entry["type"].asString()=="EXE") {
-                    string command = entry["command"].asString();
-                }
-                batchFile << entry["command"].asString();
-                // Requirement funtional Task 13
-                // In this part of the code, entries of type "PATH" are stored with their file path ("path")
-                if(entry["type"].asString()=="path") {
-                    string path = entry["path"].asString();
-                }
-                batchFile << entry["path"].asString();
+            // Requirement funtional Task 11
+            // In this part of the code, entries of type "ENV" are stored with their "key" and "value".
+            if(entry["type"].asString()=="ENV") {
+                envCommands += "set " + entry["key"].asString() + "=" + entry["value"].asString() + " && ";
             }
-            // This line is responsible for outputting the command "@ECHO ON" in the bottom line of the batch file 
-            batchFile <<"\n@ECHO ON";
+
+            // Requirement funtional Task 12
+            // In this part of the code, entries of type "EXE" are stored with their call "command"
+            if (entry["type"].asString() == "EXE") {
+                exeCommands += "\"" + entry["command"].asString() + " && ";
+            }
+
+            // Requirement funtional Task 13
+            // In this part of the code, entries of type "PATH" are stored with their file path ("path")
+            if(entry["type"].asString()=="PATH") {
+                pathCommands += entry["path"].asString() + ";";
+            }
+        }
+
+        
+
+        // Write the EXE commands
+        batchFile << exeCommands;
+        
+        // Write the ENV commands
+        batchFile << envCommands;
+
+        // Write the PATH commands
+        if (!pathCommands.empty()) {
+                if (pathCommands.back() == ';') {
+                    pathCommands.pop_back();
+                }
+                // Construct the command string
+                string pathCommand = "set path=" + pathCommands + ";%path%\"";
+                // Write the command string to the file
+                batchFile << pathCommand;
+            }
+            // Write the application command if it exists
+    if (root.isMember("application")) {
+    string applicationPath = root["application"].asString();
+    string applicationCommand; // Declaration of applicationCommand
+
+    // Check if the application path contains spaces
+    if (applicationPath.find(' ') != string::npos) {
+        // If the application path contains spaces, wrap it with double quotes
+        applicationCommand = " && start \"" + applicationPath + "\"";
+    } else {
+        // Otherwise, no need to wrap with double quotes
+        applicationCommand = " && start " + applicationPath;
+    }
+    
+    batchFile << applicationCommand;
+}
+    	    batchFile << "\n@ECHO ON";
         }
         return EXIT_SUCCESS;
     }
