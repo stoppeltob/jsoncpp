@@ -141,36 +141,45 @@ int main(const int argc, const char **argv) {
             cerr << "Datei ist ungueltig: " << path.string() << endl;
             return EXIT_FAILURE;
         }
-
+        // Line 144 - 174 Part from David Prinz 
+        // Requirement funtional Task 8
+        // The file name of the batch file is written in this part of the code. The information about the name is taken from the "outputfile" of the json file. 
         const Json::Value entries = root["entries"];
         string dateiname = root["outputfile"].asString();
         ofstream batchFile(dateiname);
         batchFile << "@ECHO OFF\n";
-
+        // Requirement funtional Task 9
+        // In this part of the code, the information as to whether the shell should be hidden is taken from the "hideshell" entry in the json file. If the shell is to be hidden, "/c" is written, otherwise "/k" 
         if (hideshellcheck(root)) {
             batchFile << " /c";
         } else {
             batchFile << " /k";
         }
-
+        // Requirement funtional Task 10
+        // In this part of the code, a for-loop is used to read and save any number of entries under a JASON array "entries"
         if(entries.isArray()) {
             for (const auto& entry : entries) {
+                // Requirement funtional Task 11
+                //In this part of the code, entries of type "ENV" are stored with their "key" and "value".
                 if(entry["type"].asString()=="ENV") {
                     string key = entry["key"].asString();
                     string value = entry["value"].asString();
                 }
                 batchFile << entry["key"].asString()  << entry["value"].asString();
-
+                // Requirement funtional Task 12
+                //In this part of the code, entries of type "EXE" are stored with their call "command"
                 if(entry["type"].asString()=="EXE") {
                     string command = entry["command"].asString();
                 }
                 batchFile << entry["command"].asString();
-
+                // Requirement funtional Task 13
+                // In this part of the code, entries of type "PATH" are stored with their file path ("path")
                 if(entry["type"].asString()=="path") {
                     string path = entry["path"].asString();
                 }
                 batchFile << entry["path"].asString();
             }
+            // This line is responsible for outputting the command "@ECHO ON" in the bottom line of the batch file 
             batchFile <<"\n@ECHO ON";
         }
         return EXIT_SUCCESS;
