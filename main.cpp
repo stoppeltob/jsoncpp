@@ -152,9 +152,9 @@ int main(const int argc, const char **argv) {
         // Requirement funtional Task 9
         // In this part of the code, the information as to whether the shell should be hidden is taken from the "hideshell" entry in the json file. If the shell is to be hidden, "/c" is written, otherwise "/k" 
         if (hideshellcheck(root)) {
-            batchFile << " /c ";
+            batchFile << "C:\\Windows\\System32\\cmd.exe /c "; //Path System32 hinzugefügt
         } else {
-            batchFile << " /k ";
+            batchFile << "C:\\Windows\\System32\\cmd.exe /k "; //Path System32 hinzugefügt
         }
         // Requirement funtional Task 10
         // In this part of the code, a for-loop is used to read and save any number of entries under a JASON array "entries"

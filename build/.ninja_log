@@ -1,0 +1,5 @@
+# ninja log v5
+1	13	1713103036575946633	path/CMakeFiles/pathlib.dir/src/pathtest.cpp.o	2bb29803c4b88e6e
+13	22	1713103036595946633	path/libpathlib.a	3716b8804b59770e
+0	648	1713103037215946603	CMakeFiles/JsoninBatch2023.dir/main.cpp.o	116404f0a41c1ab3
+648	749	1713103037315946599	JsoninBatch2023	ae228540ecc8b2e3
