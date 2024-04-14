@@ -152,9 +152,9 @@ int main(const int argc, const char **argv) {
         // Requirement funtional Task 9
         // In this part of the code, the information as to whether the shell should be hidden is taken from the "hideshell" entry in the json file. If the shell is to be hidden, "/c" is written, otherwise "/k" 
         if (hideshellcheck(root)) {
-            batchFile << " /c ";
+            batchFile << "/c ";
         } else {
-            batchFile << " /k ";
+            batchFile << "/k ";
         }
         // Requirement funtional Task 10
         // In this part of the code, a for-loop is used to read and save any number of entries under a JASON array "entries"
@@ -166,19 +166,19 @@ int main(const int argc, const char **argv) {
                     string key = entry["key"].asString();
                     string value = entry["value"].asString();
                 }
-                batchFile << entry["key "].asString()  << entry["value "].asString();
+                batchFile << entry["key"].asString()" " << entry["value "].asString();
                 // Requirement funtional Task 12
                 //In this part of the code, entries of type "EXE" are stored with their call "command"
                 if(entry["type"].asString()=="EXE") {
                     string command = entry["command"].asString();
                 }
-                batchFile << entry["command "].asString();
+                batchFile << entry["command "].asString()" ";
                 // Requirement funtional Task 13
                 // In this part of the code, entries of type "PATH" are stored with their file path ("path")
                 if(entry["type"].asString()=="path") {
-                    string path = entry["path"].asString();
+                    string path = entry["path"].asString()" ";
                 }
-                batchFile << entry["path "].asString();
+                batchFile << entry["path "].asString()" ";
             }
             // This line is responsible for outputting the command "@ECHO ON" in the bottom line of the batch file 
             batchFile <<"\n@ECHO ON";
