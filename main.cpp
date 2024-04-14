@@ -166,19 +166,19 @@ int main(const int argc, const char **argv) {
                     string key = entry["key"].asString();
                     string value = entry["value"].asString();
                 }
-                batchFile << entry["key"].asString()  << entry["value"].asString();
+                batchFile << entry["key "].asString()  << entry["value "].asString();
                 // Requirement funtional Task 12
                 //In this part of the code, entries of type "EXE" are stored with their call "command"
                 if(entry["type"].asString()=="EXE") {
                     string command = entry["command"].asString();
                 }
-                batchFile << entry["command"].asString();
+                batchFile << entry["command "].asString();
                 // Requirement funtional Task 13
                 // In this part of the code, entries of type "PATH" are stored with their file path ("path")
                 if(entry["type"].asString()=="path") {
                     string path = entry["path"].asString();
                 }
-                batchFile << entry["path"].asString();
+                batchFile << entry["path "].asString();
             }
             // This line is responsible for outputting the command "@ECHO ON" in the bottom line of the batch file 
             batchFile <<"\n@ECHO ON";

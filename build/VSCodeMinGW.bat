@@ -1,3 +1,0 @@
-@ECHO OFF
- /cC:\sicherung\tools\MinGW\set_distro_paths.batBOOST_INCLUDEDIRC:\sicherung\tools\MinGW\includeBOOST_LIBRARYDIRC:\sicherung\tools\MinGW\libC:\sicherung\tools\MinGW\binC:\sicherung\tools\MinGW\x86_64-w64-mingw32\binC:\sicherung\tools\MinGW\libexec\gcc\x86_64-w64-mingw32\13.2.0C:\sicherung\tools\MinGW\includeC:\sicherung\tools\MinGW\libC:\sicherung\tools\xerces-c\binC:\sicherung\tools\AStyle\binC:\sicherung\tools\cmake\binC:\sicherung\tools\int_toolsC:\sicherung\tools\ninjaC:\sicherung\tools\doxygenC:\sicherung\tools\VSCode
-@ECHO ON
