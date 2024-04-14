@@ -1,9 +1,6 @@
 CMakeFiles/JsoninBatch2023.dir/main.cpp.o: \
  /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/main.cpp \
- /usr/include/stdc-predef.h \
- /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/include/config.h \
- /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/path/include/pathtest.h \
- /usr/include/c++/11/iostream \
+ /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -185,7 +182,6 @@ CMakeFiles/JsoninBatch2023.dir/main.cpp.o: \
  /usr/include/c++/11/bits/refwrap.h \
  /usr/include/c++/11/ext/aligned_buffer.h \
  /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
- /home/david/dhbw/programmieren1/c++/Programmentwurf/jsoncpp/include/options.h \
  /usr/include/jsoncpp/json/json.h /usr/include/jsoncpp/json/config.h \
  /usr/include/c++/11/cstddef /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_uninitialized.h \

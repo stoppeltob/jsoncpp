@@ -48,7 +48,8 @@ public:
         string path;
         while (getline(pathStream, path, fs::path::preferred_separator)) {
             for (const auto& entry : fs::directory_iterator(path)) {
-                if (is_regular_file(entry.path()) && fs::status(entry.path()).permissions() & fs::perms::owner_exec) {
+                if (fs::is_regular_file(entry.path()) && 
+                    (fs::status(entry.path()).permissions() & fs::perms::owner_exec) != fs::perms::none) {
                     string appName = entry.path().filename().string();
                     string appPath = entry.path().string();
                     entries.push_back(EnvironmentEntry("application", appName + " " + appPath, "EXE"));
@@ -151,9 +152,9 @@ int main(const int argc, const char **argv) {
         // Requirement funtional Task 9
         // In this part of the code, the information as to whether the shell should be hidden is taken from the "hideshell" entry in the json file. If the shell is to be hidden, "/c" is written, otherwise "/k" 
         if (hideshellcheck(root)) {
-            batchFile << " /c";
+            batchFile << " /c ";
         } else {
-            batchFile << " /k";
+            batchFile << " /k ";
         }
         // Requirement funtional Task 10
         // In this part of the code, a for-loop is used to read and save any number of entries under a JASON array "entries"
