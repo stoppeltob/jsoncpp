@@ -86,6 +86,7 @@ int main(const int argc, const char **argv) {
 
 
                 }
+                batchFile <<"\n@ECHO ON";
             }
             return EXIT_SUCCESS;
         }
