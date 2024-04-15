@@ -44,7 +44,7 @@ static const struct option longopts[] =
 	{0,0,0,0} // Termination
 };
 
-while ((option_index == getopt_long(argc, argv, "hv", longopts, NULL)) != -1) {
+while ((option_index = getopt_long(argc, argv, "hv", longopts, NULL)) != -1) {
 	switch (option_index) {
 		case 'h':
 			printHelptxt();
