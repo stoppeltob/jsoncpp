@@ -234,4 +234,6 @@ CMakeFiles/JsoninBatch2023.dir/main.cpp.o: \
  /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/deque \
  /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
  /usr/include/c++/11/stack /usr/include/c++/11/bits/stl_stack.h \
- /usr/include/jsoncpp/json/writer.h
+ /usr/include/jsoncpp/json/writer.h \
+ /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/include/options.h \
+ /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/include/config.h
