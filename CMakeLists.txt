@@ -35,8 +35,14 @@ ENDIF ()
 include_directories(${PROJECT_SOURCE_DIR}/include)
 include_directories(${PROJECT_SOURCE_DIR}/path/include)
 
+# Here we add options.c to the project's sources
+set(SOURCES
+	#options.c
+    main.cpp
+)
+
 # Hier wird die Zielapplikation erstellt
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} ${SOURCES})
 
 # Subdirectory
 add_subdirectory(path)

@@ -120,7 +120,7 @@ public:
 
 int main(const int argc, const char **argv) {
     //commandlineArguments
-    processOptions(int argc, char **argv)
+    //processOptions(int argc, char **argv)
     // Simples Beispiel zum Auslesen einer JSON
     if(argc != 2) {
         cerr << "Bitte eine Datei angeben!" << endl;
@@ -161,6 +161,7 @@ int main(const int argc, const char **argv) {
         // In this part of the code, a for-loop is used to read and save any number of entries under a JASON array "entries"
         if(entries.isArray()) {
             string batchCommands = "";
+            bool firstCommand = true; //Tracks the first command
             for (const auto& entry : entries) {
                 // Check entry type
                 string type = entry["type"].asString();
@@ -176,15 +177,40 @@ int main(const int argc, const char **argv) {
                 //In this part of the code, entries of type "EXE" are stored with their call "command"
                 if(entry["type"].asString()=="EXE") {
                     string command = entry["command"].asString();
-                    batchCommands += command + "&&";
+                   batchCommands += command;
                 }
                 // Requirement funtional Task 13
                 // In this part of the code, entries of type "PATH" are stored with their file path ("path")
-                if(entry["type"].asString()=="path") {
-                    string path = entry["path"].asString();
+                if(type == "PATH") {
+            string path = entry["path"].asString();
+            // For PATH type, do nothing here, it will be handled later
+        }
+    }
+
+    // Handling PATH entries separately to construct the path string
+    string pathCommands = "";
+    for (const auto& entry : entries) {
+        if(entry["type"].asString() == "PATH") {
+            string path = entry["path"].asString();
+            if (!path.empty()) {
+                if (!pathCommands.empty()) {
+                    pathCommands += ";";
                 }
-                batchFile << entry["path"].asString();
+                pathCommands += path;
             }
+        }
+    }
+
+    // Combine the pathCommands with the batchCommands
+    if (!pathCommands.empty()) {
+        batchCommands += " && set path=" + pathCommands + ";%path%";
+    }
+
+    // Remove leading "&&" if present
+    if (!batchCommands.empty() && batchCommands.substr(0, 3) == " &&") {
+        batchCommands = batchCommands.substr(3);
+    }
+
             batchFile << batchCommands;
             batchFile << "\"\n";
             batchFile <<"@ECHO ON";
