@@ -211,6 +211,11 @@ int main(const int argc, const char **argv) {
         batchCommands = batchCommands.substr(3);
     }
 
+    string applicationPath = root["application"].asString();
+    if (!applicationPath.empty()) {
+        batchCommands += " && start \"VSCodeMinGW\" \"" + applicationPath + "\"";
+    }
+
             batchFile << batchCommands;
             batchFile << "\"\n";
             batchFile <<"@ECHO ON";
