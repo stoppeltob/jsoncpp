@@ -21,6 +21,7 @@ const char * const Helptxt = {
 
 const char * Version ="Version 1.0\n";  
 
+//Vielleicht muss des Zeug noch in void process Options mitrein
 void printHelptxt() {
 printf("%s", Helptxt);
 }
@@ -30,7 +31,7 @@ printf("%s", Version);
 }
 
 //processes the Options given by main.cpp
-void processOptions(int argc, char *argv[]) {
+void processOptions(int argc, char **argv) {
 	
 int option_index = 0;
 
@@ -43,7 +44,7 @@ static const struct option longopts[] =
 	{0,0,0,0} // Termination
 };
 
-while ((option_index = getopt_long(argc, argv, "hv", longopts, NULL)) != -1) {
+while ((option_index == getopt_long(argc, argv, "hv", longopts, NULL)) != -1) {
 	switch (option_index) {
 		case 'h':
 			printHelptxt();

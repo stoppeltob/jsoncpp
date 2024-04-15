@@ -7,6 +7,8 @@
 #include <cstdlib> // for getenv
 #include <sstream>
 #include <unistd.h> // for environ
+#include <options.h> //commandlineArguments
+#include <config.h>
 
 using namespace std;
 namespace fs = std::filesystem;
@@ -117,8 +119,8 @@ public:
 };
 
 int main(const int argc, const char **argv) {
-    //commandlinearguments
-    //processOptions(argc,argv)
+    //commandlineArguments
+    processOptions(argc,argv);
 
     // Simples Beispiel zum Auslesen einer JSON
     if(argc != 2) {
