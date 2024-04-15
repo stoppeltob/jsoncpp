@@ -1,3 +1,0 @@
-@ECHO OFF
-C:\Windows\System32\cmd.exe /k "C:\sicherung\tools\MinGW\binC:\sicherung\tools\MinGW\x86_64-w64-mingw32\binC:\sicherung\tools\MinGW\libexec\gcc\x86_64-w64-mingw32\13.2.0C:\sicherung\tools\MinGW\includeC:\sicherung\tools\MinGW\libC:\sicherung\tools\xerces-c\binC:\sicherung\tools\AStyle\binC:\sicherung\tools\cmake\binC:\sicherung\tools\int_toolsC:\sicherung\tools\ninjaC:\sicherung\tools\doxygenC:\sicherung\tools\VSCodeC:\sicherung\tools\MinGW\set_distro_paths.bat&& && set BOOST_INCLUDEDIR=C:\sicherung\tools\MinGW\include && set BOOST_LIBRARYDIR=C:\sicherung\tools\MinGW\lib"
-@ECHO ON
