@@ -143,7 +143,7 @@ int main(const int argc, char **argv) {
             cerr << "Datei ist ungueltig: " << path.string() << endl;
             return EXIT_FAILURE;
         }
-        // Line 144 - 174 Part from David Prinz 
+        // Line 144 - 185 Part from David Prinz 
         // Requirement funtional Task 8
         // The file name of the batch file is written in this part of the code. The information about the name is taken from the "outputfile" of the json file. 
         const Json::Value entries = root["entries"];
