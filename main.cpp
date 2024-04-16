@@ -211,10 +211,10 @@ int main(const int argc, char **argv) {
         batchCommands = batchCommands.substr(3);
     }
 
-    if (dateiname.size() > 4 && dateiname.substr(dateiname.size() - 4) == ".bat") {
+    /*if (dateiname.size() > 4 && dateiname.substr(dateiname.size() - 4) == ".bat") {
         dateiname = dateiname.substr(0, dateiname.size() - 4);
     }
-    ofstream batchFile(dateiname + ".bat");
+    ofstream batchFile(dateiname + ".bat");*/
 
     string applicationPath = root["application"].asString();
     if (!applicationPath.empty()) {
