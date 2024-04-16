@@ -1,4 +1,4 @@
 #ifndef OPTIONS_H
 #define OPTIONS_H
-extern void processOptions(const int argc, const char **argv);
+extern void processOptions(const int argc, char **argv);
 #endif

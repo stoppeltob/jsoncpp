@@ -118,7 +118,7 @@ public:
     }
 };
 
-int main(const int argc, const char **argv) {
+int main(const int argc, char **argv) {
     //commandlineArguments
     //processOptions(int argc, char **argv)
     // Simples Beispiel zum Auslesen einer JSON
