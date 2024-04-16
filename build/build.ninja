@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/
+cmake_ninja_workdir = /home/tobias/projects/C++/jsoncpp/build/
 
 #############################################
 # Utility command for astyle
@@ -55,10 +55,10 @@ build astyle: phony CMakeFiles/astyle
 
 build cmake_object_order_depends_target_JsoninBatch2023: phony || cmake_object_order_depends_target_pathlib
 
-build CMakeFiles/JsoninBatch2023.dir/main.cpp.o: CXX_COMPILER__JsoninBatch2023_Debug /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/main.cpp || cmake_object_order_depends_target_JsoninBatch2023
+build CMakeFiles/JsoninBatch2023.dir/main.cpp.o: CXX_COMPILER__JsoninBatch2023_Debug /home/tobias/projects/C++/jsoncpp/main.cpp || cmake_object_order_depends_target_JsoninBatch2023
   DEP_FILE = CMakeFiles/JsoninBatch2023.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/include -I/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path/include
+  INCLUDES = -I/home/tobias/projects/C++/jsoncpp/include -I/home/tobias/projects/C++/jsoncpp/path/include
   OBJECT_DIR = CMakeFiles/JsoninBatch2023.dir
   OBJECT_FILE_DIR = CMakeFiles/JsoninBatch2023.dir
 
@@ -72,7 +72,7 @@ build CMakeFiles/JsoninBatch2023.dir/main.cpp.o: CXX_COMPILER__JsoninBatch2023_D
 
 build JsoninBatch2023: CXX_EXECUTABLE_LINKER__JsoninBatch2023_Debug CMakeFiles/JsoninBatch2023.dir/main.cpp.o | path/libpathlib.a || path/libpathlib.a
   FLAGS = -g
-  LINK_LIBRARIES = path/libpathlib.a  -ljsoncpp  -lpath
+  LINK_LIBRARIES = path/libpathlib.a  -ljsoncpp
   OBJECT_DIR = CMakeFiles/JsoninBatch2023.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -84,7 +84,7 @@ build JsoninBatch2023: CXX_EXECUTABLE_LINKER__JsoninBatch2023_Debug CMakeFiles/J
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/tobias/projects/C++/jsoncpp/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -95,7 +95,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && /usr/bin/cmake --regenerate-during-build -S/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp -B/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build
+  COMMAND = cd /home/tobias/projects/C++/jsoncpp/build && /usr/bin/cmake --regenerate-during-build -S/home/tobias/projects/C++/jsoncpp -B/home/tobias/projects/C++/jsoncpp/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -107,11 +107,11 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Custom command for CMakeFiles/astyle
 
 build CMakeFiles/astyle | ${cmake_ninja_workdir}CMakeFiles/astyle: CUSTOM_COMMAND
-  COMMAND = cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && astyle -r "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/*.h" "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/*.cpp" --exclude=build
+  COMMAND = cd /home/tobias/projects/C++/jsoncpp/build && astyle -r "/home/tobias/projects/C++/jsoncpp/*.h" "/home/tobias/projects/C++/jsoncpp/*.cpp" --exclude=build
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/CMakeLists.txt
+# /home/tobias/projects/C++/jsoncpp/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -123,19 +123,11 @@ build CMakeFiles/astyle | ${cmake_ninja_workdir}CMakeFiles/astyle: CUSTOM_COMMAN
 
 build cmake_object_order_depends_target_pathlib: phony || path/CMakeFiles/pathlib.dir
 
-build path/CMakeFiles/pathlib.dir/src/pathtest.cpp.o: CXX_COMPILER__pathlib_Debug /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path/src/pathtest.cpp || cmake_object_order_depends_target_pathlib
+build path/CMakeFiles/pathlib.dir/src/pathtest.cpp.o: CXX_COMPILER__pathlib_Debug /home/tobias/projects/C++/jsoncpp/path/src/pathtest.cpp || cmake_object_order_depends_target_pathlib
   DEFINES = -DVERSION=v0.0.1
   DEP_FILE = path/CMakeFiles/pathlib.dir/src/pathtest.cpp.o.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/include -I/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path/include
-  OBJECT_DIR = path/CMakeFiles/pathlib.dir
-  OBJECT_FILE_DIR = path/CMakeFiles/pathlib.dir/src
-
-build path/CMakeFiles/pathlib.dir/src/options.c.o: C_COMPILER__pathlib_Debug /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path/src/options.c || cmake_object_order_depends_target_pathlib
-  DEFINES = -DVERSION=v0.0.1
-  DEP_FILE = path/CMakeFiles/pathlib.dir/src/options.c.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/include -I/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path/include
+  INCLUDES = -I/home/tobias/projects/C++/jsoncpp/include -I/home/tobias/projects/C++/jsoncpp/path/include
   OBJECT_DIR = path/CMakeFiles/pathlib.dir
   OBJECT_FILE_DIR = path/CMakeFiles/pathlib.dir/src
 
@@ -147,7 +139,7 @@ build path/CMakeFiles/pathlib.dir/src/options.c.o: C_COMPILER__pathlib_Debug /ho
 #############################################
 # Link the static library path/libpathlib.a
 
-build path/libpathlib.a: CXX_STATIC_LIBRARY_LINKER__pathlib_Debug path/CMakeFiles/pathlib.dir/src/pathtest.cpp.o path/CMakeFiles/pathlib.dir/src/options.c.o
+build path/libpathlib.a: CXX_STATIC_LIBRARY_LINKER__pathlib_Debug path/CMakeFiles/pathlib.dir/src/pathtest.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = path/CMakeFiles/pathlib.dir
   POST_BUILD = :
@@ -160,7 +152,7 @@ build path/libpathlib.a: CXX_STATIC_LIBRARY_LINKER__pathlib_Debug path/CMakeFile
 # Utility command for edit_cache
 
 build path/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/path && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/tobias/projects/C++/jsoncpp/build/path && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -171,7 +163,7 @@ build path/edit_cache: phony path/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build path/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/path && /usr/bin/cmake --regenerate-during-build -S/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp -B/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build
+  COMMAND = cd /home/tobias/projects/C++/jsoncpp/build/path && /usr/bin/cmake --regenerate-during-build -S/home/tobias/projects/C++/jsoncpp -B/home/tobias/projects/C++/jsoncpp/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -191,14 +183,14 @@ build pathlib: phony path/libpathlib.a
 # =============================================================================
 
 #############################################
-# Folder: /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build
+# Folder: /home/tobias/projects/C++/jsoncpp/build
 
 build all: phony JsoninBatch2023 path/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/path
+# Folder: /home/tobias/projects/C++/jsoncpp/build/path
 
 build path/all: phony path/libpathlib.a
 

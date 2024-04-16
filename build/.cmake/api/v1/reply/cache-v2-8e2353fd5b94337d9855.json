@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build"
+			"value" : "/home/tobias/projects/C++/jsoncpp/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp"
+			"value" : "/home/tobias/projects/C++/jsoncpp"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1171,7 +1171,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build"
+			"value" : "/home/tobias/projects/C++/jsoncpp/build"
 		},
 		{
 			"name" : "JsoninBatch2023_IS_TOP_LEVEL",
@@ -1195,7 +1195,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp"
+			"value" : "/home/tobias/projects/C++/jsoncpp"
 		}
 	],
 	"kind" : "cache",

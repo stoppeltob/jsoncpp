@@ -131,8 +131,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build",
-		"source" : "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp"
+		"build" : "/home/tobias/projects/C++/jsoncpp/build",
+		"source" : "/home/tobias/projects/C++/jsoncpp"
 	},
 	"version" : 
 	{

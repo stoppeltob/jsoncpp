@@ -120,7 +120,7 @@ public:
 
 int main(const int argc, char **argv) {
     //commandlineArguments
-    processOptions(argc, argv);
+    //processOptions(argc, argv);
     // Simples Beispiel zum Auslesen einer JSON
     if(argc != 2) {
         cerr << "Bitte eine Datei angeben!" << endl;

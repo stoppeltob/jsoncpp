@@ -26,25 +26,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 44,
+				"line" : 37,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 53,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 35,
+				"line" : 27,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 36,
+				"line" : 28,
 				"parent" : 0
 			}
 		]
@@ -65,11 +65,11 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/include"
+					"path" : "/home/tobias/projects/C++/jsoncpp/include"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path/include"
+					"path" : "/home/tobias/projects/C++/jsoncpp/path/include"
 				}
 			],
 			"language" : "CXX",
@@ -115,11 +115,6 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "-ljsoncpp",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "-lpath",
 				"role" : "libraries"
 			}
 		],
