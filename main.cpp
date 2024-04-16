@@ -213,7 +213,7 @@ int main(const int argc, char **argv) {
 
     string applicationPath = root["application"].asString();
     if (!applicationPath.empty()) {
-        batchCommands += " && start \"VSCodeMinGW\" \"" + applicationPath + "\"";
+        batchCommands += " && start \"VSCodeMinGW\" " + applicationPath;
     }
 
             batchFile << batchCommands;
