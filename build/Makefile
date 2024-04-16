@@ -179,6 +179,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/JsoninBatch2023.dir/build.make CMakeFiles/JsoninBatch2023.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+options.o: options.c.o
+.PHONY : options.o
+
+# target to build an object file
+options.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/JsoninBatch2023.dir/build.make CMakeFiles/JsoninBatch2023.dir/options.c.o
+.PHONY : options.c.o
+
+options.i: options.c.i
+.PHONY : options.i
+
+# target to preprocess a source file
+options.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/JsoninBatch2023.dir/build.make CMakeFiles/JsoninBatch2023.dir/options.c.i
+.PHONY : options.c.i
+
+options.s: options.c.s
+.PHONY : options.s
+
+# target to generate assembly for a file
+options.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/JsoninBatch2023.dir/build.make CMakeFiles/JsoninBatch2023.dir/options.c.s
+.PHONY : options.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -193,6 +217,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... options.o"
+	@echo "... options.i"
+	@echo "... options.s"
 .PHONY : help
 
 

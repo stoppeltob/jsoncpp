@@ -36,11 +36,10 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 include_directories(${PROJECT_SOURCE_DIR}/path/include)
 
 # Here we add options.c to the project's sources
-file(GLOB SOURCES "${PROJECT_SOURCE_DIR}/*.c)
+file(GLOB SOURCES "${PROJECT_SOURCE_DIR}/*.c")
 #set(SOURCES
 #	#options.c
-#   main.cpp
-#)
+#  main.cpp
 
 # Hier wird die Zielapplikation erstellt
 add_executable(${PROJECT_NAME} main.cpp ${SOURCES})

@@ -31,7 +31,7 @@ printf("%s", Version);
 }
 
 //processes the Options given by main.cpp
-void processOptions(const int argc, char **argv) {
+void processOptions(int argc, char **argv) {
 	
 int option_index = 0;
 
