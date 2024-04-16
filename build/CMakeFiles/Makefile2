@@ -125,7 +125,7 @@ CMakeFiles/astyle.dir/clean:
 CMakeFiles/JsoninBatch2023.dir/all: path/CMakeFiles/pathlib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/JsoninBatch2023.dir/build.make CMakeFiles/JsoninBatch2023.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/JsoninBatch2023.dir/build.make CMakeFiles/JsoninBatch2023.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles --progress-num=1,2,3 "Built target JsoninBatch2023"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles --progress-num=1,2 "Built target JsoninBatch2023"
 .PHONY : CMakeFiles/JsoninBatch2023.dir/all
 
 # Build rule for subdir invocation for target.
@@ -151,12 +151,12 @@ CMakeFiles/JsoninBatch2023.dir/clean:
 path/CMakeFiles/pathlib.dir/all:
 	$(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/depend
 	$(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles --progress-num=4,5 "Built target pathlib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles --progress-num=3,4,5 "Built target pathlib"
 .PHONY : path/CMakeFiles/pathlib.dir/all
 
 # Build rule for subdir invocation for target.
 path/CMakeFiles/pathlib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 path/CMakeFiles/pathlib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles 0
 .PHONY : path/CMakeFiles/pathlib.dir/rule

@@ -1,2 +1,2 @@
-/usr/bin/ar qc libpathlib.a CMakeFiles/pathlib.dir/src/pathtest.cpp.o
+/usr/bin/ar qc libpathlib.a CMakeFiles/pathlib.dir/src/pathtest.cpp.o CMakeFiles/pathlib.dir/src/options.c.o
 /usr/bin/ranlib libpathlib.a

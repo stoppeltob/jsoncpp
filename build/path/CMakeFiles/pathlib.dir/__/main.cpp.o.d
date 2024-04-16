@@ -1,4 +1,4 @@
-CMakeFiles/JsoninBatch2023.dir/main.cpp.o: \
+path/CMakeFiles/pathlib.dir/__/main.cpp.o: \
  /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/main.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -235,5 +235,5 @@ CMakeFiles/JsoninBatch2023.dir/main.cpp.o: \
  /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
  /usr/include/c++/11/stack /usr/include/c++/11/bits/stl_stack.h \
  /usr/include/jsoncpp/json/writer.h \
- /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path/include/options.h \
+ /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/include/options.h \
  /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/include/config.h

@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/options.c" "CMakeFiles/JsoninBatch2023.dir/options.c.o" "gcc" "CMakeFiles/JsoninBatch2023.dir/options.c.o.d"
   "/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/main.cpp" "CMakeFiles/JsoninBatch2023.dir/main.cpp.o" "gcc" "CMakeFiles/JsoninBatch2023.dir/main.cpp.o.d"
   )
 

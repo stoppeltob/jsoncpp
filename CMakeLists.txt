@@ -37,9 +37,8 @@ include_directories(${PROJECT_SOURCE_DIR}/path/include)
 
 # Here we add options.c to the project's sources
 file(GLOB SOURCES "${PROJECT_SOURCE_DIR}/*.c")
-#set(SOURCES
-#	#options.c
-#  main.cpp
+#set(SOURCES options.c)
+  
 
 # Hier wird die Zielapplikation erstellt
 add_executable(${PROJECT_NAME} main.cpp ${SOURCES})
@@ -51,5 +50,5 @@ add_subdirectory(path)
 IF (MINGW)
    target_link_libraries(${PROJECT_NAME} pathlib jsoncpp wsock32 ws2_32)
 ELSE (MINGW)
-   target_link_libraries(${PROJECT_NAME} pathlib jsoncpp)
+   target_link_libraries(${PROJECT_NAME} pathlib jsoncpp path)
 ENDIF ()

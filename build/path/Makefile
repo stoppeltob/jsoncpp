@@ -130,6 +130,30 @@ pathlib/fast:
 	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/build
 .PHONY : pathlib/fast
 
+src/options.o: src/options.c.o
+.PHONY : src/options.o
+
+# target to build an object file
+src/options.c.o:
+	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/src/options.c.o
+.PHONY : src/options.c.o
+
+src/options.i: src/options.c.i
+.PHONY : src/options.i
+
+# target to preprocess a source file
+src/options.c.i:
+	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/src/options.c.i
+.PHONY : src/options.c.i
+
+src/options.s: src/options.c.s
+.PHONY : src/options.s
+
+# target to generate assembly for a file
+src/options.c.s:
+	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build && $(MAKE) $(MAKESILENT) -f path/CMakeFiles/pathlib.dir/build.make path/CMakeFiles/pathlib.dir/src/options.c.s
+.PHONY : src/options.c.s
+
 src/pathtest.o: src/pathtest.cpp.o
 .PHONY : src/pathtest.o
 
@@ -163,6 +187,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... pathlib"
+	@echo "... src/options.o"
+	@echo "... src/options.i"
+	@echo "... src/options.s"
 	@echo "... src/pathtest.o"
 	@echo "... src/pathtest.i"
 	@echo "... src/pathtest.s"

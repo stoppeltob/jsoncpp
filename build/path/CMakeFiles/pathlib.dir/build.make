@@ -83,17 +83,33 @@ path/CMakeFiles/pathlib.dir/src/pathtest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pathlib.dir/src/pathtest.cpp.s"
 	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/path && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path/src/pathtest.cpp -o CMakeFiles/pathlib.dir/src/pathtest.cpp.s
 
+path/CMakeFiles/pathlib.dir/src/options.c.o: path/CMakeFiles/pathlib.dir/flags.make
+path/CMakeFiles/pathlib.dir/src/options.c.o: ../path/src/options.c
+path/CMakeFiles/pathlib.dir/src/options.c.o: path/CMakeFiles/pathlib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object path/CMakeFiles/pathlib.dir/src/options.c.o"
+	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/path && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT path/CMakeFiles/pathlib.dir/src/options.c.o -MF CMakeFiles/pathlib.dir/src/options.c.o.d -o CMakeFiles/pathlib.dir/src/options.c.o -c /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path/src/options.c
+
+path/CMakeFiles/pathlib.dir/src/options.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pathlib.dir/src/options.c.i"
+	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/path && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path/src/options.c > CMakeFiles/pathlib.dir/src/options.c.i
+
+path/CMakeFiles/pathlib.dir/src/options.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pathlib.dir/src/options.c.s"
+	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/path && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/path/src/options.c -o CMakeFiles/pathlib.dir/src/options.c.s
+
 # Object files for target pathlib
 pathlib_OBJECTS = \
-"CMakeFiles/pathlib.dir/src/pathtest.cpp.o"
+"CMakeFiles/pathlib.dir/src/pathtest.cpp.o" \
+"CMakeFiles/pathlib.dir/src/options.c.o"
 
 # External object files for target pathlib
 pathlib_EXTERNAL_OBJECTS =
 
 path/libpathlib.a: path/CMakeFiles/pathlib.dir/src/pathtest.cpp.o
+path/libpathlib.a: path/CMakeFiles/pathlib.dir/src/options.c.o
 path/libpathlib.a: path/CMakeFiles/pathlib.dir/build.make
 path/libpathlib.a: path/CMakeFiles/pathlib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libpathlib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libpathlib.a"
 	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/path && $(CMAKE_COMMAND) -P CMakeFiles/pathlib.dir/cmake_clean_target.cmake
 	cd /home/david/dhbw/Programmieren1/Programmentwurf_c++/jsoncpp/build/path && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pathlib.dir/link.txt --verbose=$(VERBOSE)
 
