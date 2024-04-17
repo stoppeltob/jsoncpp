@@ -7,11 +7,74 @@
 #include <cstdlib> // for getenv
 #include <sstream>
 #include <unistd.h> // for environ
-#include <options.h> //commandlineArguments
+//#include <options.h> //commandlineArguments
 #include <config.h>
+//following includes are for getopt 
+#include <stdlib.h>
+#include <getopt.h>
+#include <stdio.h>
 
 using namespace std;
 namespace fs = std::filesystem;
+
+
+//Helptext and getopt made by LW 
+// Helptext for the Programm - Requirement Task 1, 2, 3
+const char * const Helptxt = {
+    "Create a Windows Batch file based on the provided JSON configuration.\n" \
+    "Usage: options [OPTIONS] file ... \n" \
+    "	-h, --help         Hier die Funktion, die beschrieben werden muessen\n" \
+    "	-o, --output=FILENAME     Set the output file name\n" \
+    "	-v, --version             Show version information\n" \
+    "\n" \
+    "Author team: \n" 
+	"David Prinz david.prinz1123@gmail.com\n"
+	"Tobias Stoppelkamp tobias.stoppelkamp05@gmail.com\n"
+	"Lion Wicki lionwicki@gmail.com\n"
+	"Phillip Assfalg philippassfalg2005@gmail.com\n"
+};
+
+const char * Version ="Version 1.0\n";  
+
+void printHelptxt() {
+printf("%s", Helptxt);
+}
+
+void printVersion() {
+printf("%s", Version);	
+}
+
+void processOptions(int argc, char **argv) {
+	
+int option_index = 0;
+
+//Defines longopt command-line arguments 
+static const struct option longopts[] = 
+{
+	// takes no arguments --> hier koennte man das inputfile definieren !!!
+	{ "help", no_argument, NULL, 'h' }, 
+	{ "version", no_argument, NULL, 'v' }, 
+	{0,0,0,0} // Termination
+};
+
+while ((option_index = getopt_long(argc, argv, "hv", longopts, NULL)) != -1) {
+	switch (option_index) {
+		case 'h':
+			printHelptxt();
+			exit(0);
+		case 'v':
+			printVersion();
+			exit(0);
+		case '?': //Error if invalid command
+			fprintf(stderr, "Invalid command-line arguments. Use --help or -h for usage information.\n");
+			exit(1);
+		default:
+		// No default defined maybe add something here
+			break;
+		}
+	}
+}
+
 
 // In this Part the Program is checking if hideshell is true or not
 bool hideshellcheck(const Json::Value& root) {
@@ -27,7 +90,6 @@ public:
     EnvironmentEntry(const string& n, const string& v, const string& t)
         : name(n), value(v), type(t) {}
 };
-
 class EnvironmentManager {
 private:
     vector<EnvironmentEntry> entries;
@@ -120,8 +182,8 @@ public:
 
 int main(const int argc, char **argv) {
     //commandlineArguments
-    //processOptions(argc, argv);
-    // Simples Beispiel zum Auslesen einer JSON
+    processOptions(argc, argv);
+
     if(argc != 2) {
         cerr << "Bitte eine Datei angeben!" << endl;
         return EXIT_FAILURE;
