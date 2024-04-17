@@ -31,7 +31,7 @@ const char * const Helptxt = {
 	"David Prinz david.prinz1123@gmail.com\n"
 	"Tobias Stoppelkamp tobias.stoppelkamp05@gmail.com\n"
 	"Lion Wicki lionwicki@gmail.com\n"
-	"Phillip Assfalg philippassfalg2005@gmail.com\n"
+	"Philipp Assfalg philippassfalg2005@gmail.com\n"
 };
 
 const char * Version ="Version 1.0\n";  
@@ -211,6 +211,7 @@ int main(const int argc, char **argv) {
         const Json::Value entries = root["entries"];
         string dateiname = root["outputfile"].asString();
         ofstream batchFile(dateiname);
+         cout << "Es wurde die Datei:'"<<dateiname<<"'erstllt.Sie finden sie im build Ordner des Programms."<<endl;
         batchFile << "@ECHO OFF\n";
         // Requirement funtional Task 9
         // In this part of the code, the information as to whether the shell should be hidden is taken from the "hideshell" entry in the json file. If the shell is to be hidden, "/c" is written, otherwise "/k" 
