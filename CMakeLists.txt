@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 # Set some basic project attributes
 project (JsoninBatch2023
 	VERSION 1.0
-	DESCRIPTION "Eine Applikation um jsoncpp zu demonstrieren")
+	DESCRIPTION "Der Programmentwurf eine JSON-Datei in eine Batch zu wandeln, von Lion Wicki, David Prinz, Philipp Assfalg, Tobias Stoppelkamp.")
 # C++ Standart
 set(CMAKE_CXX_STANDARD 20)
 # Definition hinzufuegen
@@ -29,7 +29,7 @@ include_directories(${PROJECT_SOURCE_DIR}/path/include)
 
 # Here we add options.c to the project's sources
 set(SOURCES
-	#options.c
+	LW/options.c
     main.cpp
 )
 
