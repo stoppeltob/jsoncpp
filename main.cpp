@@ -179,7 +179,20 @@ public:
         cout << "Batch file " << filename << ".bat" << " created successfully." << endl;
     }
 };
-
+/*
+void processJSONFile(const string& filename) {
+    ifstream ifs(path.string());
+    Json::Reader reader;
+    Json::Value root;
+    if(!reader.parse(ifs, root)) {
+        cerr << "Datei ist ungueltig: " << path.string() << endl;
+        return EXIT_FAILURE;
+    }
+    //!!
+    //Hier würde dann der Code von David hinkommen
+    //!!
+}
+*/
 int main(const int argc, char **argv) {
     //commandlineArguments
     processOptions(argc, argv);
@@ -205,6 +218,12 @@ int main(const int argc, char **argv) {
             cerr << "Datei ist ungueltig: " << path.string() << endl;
             return EXIT_FAILURE;
         }
+        /*
+        // Iterate through each JSON file and process it 
+        for (int i = 1; i < argc; ++i){
+            processJSONFile(argv[i]);
+        }
+        */
         // Line 144 - 185 Part from David Prinz 
         // Requirement funtional Task 8
         // The file name of the batch file is written in this part of the code. The information about the name is taken from the "outputfile" of the json file. 
