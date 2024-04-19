@@ -1,11 +1,8 @@
-/*
-#include <options.h>
-#include <getopt.h>
+#include "options.h"
 #include <stdio.h>
-#include <stdlib.h>
-//Options.c made by LW
+#include <getopt.h>
+#include <cstdlib>
 
-// Helptext for the Programm - Requirement Task 1, 2, 3
 const char * const Helptxt = {
     "Create a Windows Batch file based on the provided JSON configuration.\n" \
     "Usage: options [OPTIONS] file ... \n" \
@@ -15,51 +12,47 @@ const char * const Helptxt = {
     "\n" \
     "Author team: \n" 
 	"David Prinz david.prinz1123@gmail.com\n"
-	"Tobias Stoppelkamp tobias.stoppelkamp05@gmail.com\n"
+	"Tobias Stoppelkamp stoppelkamp05@gmail.com\n"
 	"Lion Wicki lionwicki@gmail.com\n"
-	"Phillip Assfalg philippassfalg2005@gmail.com\n"
+	"Philipp Assfalg philippassfalg2005@gmail.com\n"
 };
 
 const char * Version ="Version 1.0\n";  
 
-//Vielleicht muss des Zeug noch in void process Options mitrein
 void printHelptxt() {
-printf("%s", Helptxt);
+    printf("%s", Helptxt);
 }
 
 void printVersion() {
-printf("%s", Version);	
+    printf("%s", Version);	
 }
 
-//processes the Options given by main.cpp
 void processOptions(int argc, char **argv) {
-	
-int option_index = 0;
+    int option_index = 0;
 
-//Defines longopt command-line arguments 
-static const struct option longopts[] = 
-{
-	// takes no arguments --> hier koennte man das inputfile definieren !!!
-	{ "help", no_argument, NULL, 'h' }, 
-	{ "version", no_argument, NULL, 'v' }, 
-	{0,0,0,0} // Termination
-};
+    //Defines longopt command-line arguments 
+    static const struct option longopts[] = 
+    {
+        // takes no arguments --> hier koennte man das inputfile definieren !!!
+        { "help", no_argument, NULL, 'h' }, 
+        { "version", no_argument, NULL, 'v' }, 
+        {0,0,0,0} // Termination
+    };
 
-while ((option_index = getopt_long(argc, argv, "hv", longopts, NULL)) != -1) {
-	switch (option_index) {
-		case 'h':
-			printHelptxt();
-			exit(0);
-		case 'v':
-			printVersion();
-			exit(0);
-		case '?': //Error if invalid command
-			fprintf(stderr, "Invalid command-line arguments. Use --help or -h for usage information.\n");
-			exit(1);
-		default:
-		// No default defined maybe add something here
-			break;
-		}
-	}
+    while ((option_index = getopt_long(argc, argv, "hv", longopts, NULL)) != -1) {
+        switch (option_index) {
+            case 'h':
+                printHelptxt();
+                exit(0);
+            case 'v':
+                printVersion();
+                exit(0);
+            case '?': //Error if invalid command
+                fprintf(stderr, "Invalid command-line arguments. Use --help or -h for usage information.\n");
+                exit(1);
+            default:
+            // No default defined maybe add something here
+                break;
+        }
+    }
 }
-*/

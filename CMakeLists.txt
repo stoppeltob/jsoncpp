@@ -29,8 +29,10 @@ include_directories(${PROJECT_SOURCE_DIR}/path/include)
 
 # Here we add options.c to the project's sources
 set(SOURCES
-	#options.c
-    main.cpp
+	path/src/options.cpp
+	path/src/EnvironmentManager.cpp
+    main2.cpp
+
 )
 
 # Hier wird die Zielapplikation erstellt

@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/tobias/projects/C++/jsoncpp/build",
+  "command": "/usr/bin/g++ -I/home/tobias/projects/C++/jsoncpp/include -I/home/tobias/projects/C++/jsoncpp/path/include -g -std=gnu++20 -o CMakeFiles/JsoninBatch2023.dir/path/src/options.cpp.o -c /home/tobias/projects/C++/jsoncpp/path/src/options.cpp",
+  "file": "/home/tobias/projects/C++/jsoncpp/path/src/options.cpp"
+},
+{
+  "directory": "/home/tobias/projects/C++/jsoncpp/build",
+  "command": "/usr/bin/g++ -I/home/tobias/projects/C++/jsoncpp/include -I/home/tobias/projects/C++/jsoncpp/path/include -g -std=gnu++20 -o CMakeFiles/JsoninBatch2023.dir/path/src/EnvironmentManager.cpp.o -c /home/tobias/projects/C++/jsoncpp/path/src/EnvironmentManager.cpp",
+  "file": "/home/tobias/projects/C++/jsoncpp/path/src/EnvironmentManager.cpp"
+},
+{
+  "directory": "/home/tobias/projects/C++/jsoncpp/build",
+  "command": "/usr/bin/g++ -I/home/tobias/projects/C++/jsoncpp/include -I/home/tobias/projects/C++/jsoncpp/path/include -g -std=gnu++20 -o CMakeFiles/JsoninBatch2023.dir/main2.cpp.o -c /home/tobias/projects/C++/jsoncpp/main2.cpp",
+  "file": "/home/tobias/projects/C++/jsoncpp/main2.cpp"
+},
+{
+  "directory": "/home/tobias/projects/C++/jsoncpp/build",
+  "command": "/usr/bin/g++ -DVERSION=v0.0.1 -I/home/tobias/projects/C++/jsoncpp/include -I/home/tobias/projects/C++/jsoncpp/path/include -g -std=gnu++20 -o path/CMakeFiles/pathlib.dir/src/pathtest.cpp.o -c /home/tobias/projects/C++/jsoncpp/path/src/pathtest.cpp",
+  "file": "/home/tobias/projects/C++/jsoncpp/path/src/pathtest.cpp"
+},
+{
+  "directory": "/home/tobias/projects/C++/jsoncpp/build",
+  "command": "/usr/bin/g++ -DVERSION=v0.0.1 -I/home/tobias/projects/C++/jsoncpp/include -I/home/tobias/projects/C++/jsoncpp/path/include -g -std=gnu++20 -o path/CMakeFiles/pathlib.dir/src/EnvironmentManager.cpp.o -c /home/tobias/projects/C++/jsoncpp/path/src/EnvironmentManager.cpp",
+  "file": "/home/tobias/projects/C++/jsoncpp/path/src/EnvironmentManager.cpp"
+},
+{
+  "directory": "/home/tobias/projects/C++/jsoncpp/build",
+  "command": "/usr/bin/g++ -DVERSION=v0.0.1 -I/home/tobias/projects/C++/jsoncpp/include -I/home/tobias/projects/C++/jsoncpp/path/include -g -std=gnu++20 -o path/CMakeFiles/pathlib.dir/src/options.cpp.o -c /home/tobias/projects/C++/jsoncpp/path/src/options.cpp",
+  "file": "/home/tobias/projects/C++/jsoncpp/path/src/options.cpp"
+}
+]
