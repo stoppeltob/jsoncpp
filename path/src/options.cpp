@@ -4,20 +4,20 @@
 #include <cstdlib>
 
 const char * const Helptxt = {
-    "Create a Windows Batch file based on the provided JSON configuration.\n" \
-    "Usage: options [OPTIONS] file ... \n" \
-    "	-h, --help         Hier die Funktion, die beschrieben werden muessen\n" \
-    "	-o, --output=FILENAME     Set the output file name\n" \
-    "	-v, --version             Show version information\n" \
-    "\n" \
-    "Author team: \n" 
-	"David Prinz david.prinz1123@gmail.com\n"
-	"Tobias Stoppelkamp stoppelkamp05@gmail.com\n"
-	"Lion Wicki lionwicki@gmail.com\n"
-	"Philipp Assfalg philippassfalg2005@gmail.com\n"
+    "Create a Windows Batch file based on the provided JSON configuration.\r\n" \
+    "Usage: options [OPTIONS] file ... \r\n" \
+    "	-h, --help         Hier die Funktion, die beschrieben werden muessen\r\n" \
+    "	-o, --output=FILENAME     Set the output file name\r\n" \
+    "	-v, --version             Show version information\r\n" \
+    "\r\n" \
+    "Author team: \r\n" 
+	"David Prinz david.prinz1123@gmail.com\r\n"
+	"Tobias Stoppelkamp stoppelkamp05@gmail.com\r\n"
+	"Lion Wicki lionwicki@gmail.com\r\n"
+	"Philipp Assfalg philippassfalg2005@gmail.com\r\n"
 };
 
-const char * Version ="Version 1.0\n";  
+const char * Version ="Version 1.0\r\n";  
 
 void printHelptxt() {
     printf("%s", Helptxt);
@@ -48,7 +48,7 @@ void processOptions(int argc, char **argv) {
                 printVersion();
                 exit(0);
             case '?': //Error if invalid command
-                fprintf(stderr, "Invalid command-line arguments. Use --help or -h for usage information.\n");
+                fprintf(stderr, "Invalid command-line arguments. Use --help or -h for usage information.\r\n");
                 exit(1);
             default:
             // No default defined maybe add something here

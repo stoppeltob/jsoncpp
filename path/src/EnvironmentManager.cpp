@@ -36,7 +36,7 @@ void EnvironmentManager::populateEntries() {
 
 void EnvironmentManager::printEntries() const {
     for (const auto& entry : entries) {
-        cout << "Type: " << entry.type << ", Name: " << entry.name << ", Value: " << entry.value << "\n";
+        cout << "Type: " << entry.type << ", Name: " << entry.name << ", Value: " << entry.value << "\r\n";
     }
 }
 
@@ -129,7 +129,22 @@ void EnvironmentManager::createBatchFile(const string& filename, bool hideShell,
         return;
     }
 
-    batchFile << (hideShell ? "@ECHO OFF\n" : "@ECHO ON\n");
+    batchFile << "@ECHO OFF\r\n";
+
+    // Überprüfen, ob "hideshell" im JSON vorhanden ist und den entsprechenden Befehl schreiben
+    bool hideshell = false;
+    if (root.isMember("hideshell")) {
+        hideshell = root["hideshell"].asBool();
+    }
+
+    // Schreibe den entsprechenden Befehl basierend auf dem Wert von hideShell
+    if (hideshell) {
+        batchFile << "C:\\Windows\\System32\\cmd.exe /c "; // Pfad System32 hinzugefügt
+    } else {
+        batchFile << "C:\\Windows\\System32\\cmd.exe /k "; // Pfad System32 hinzugefügt
+    }
+
+
 
     for (const auto& entry : entries) {
         if (entry.type == "EXE") {
@@ -170,8 +185,7 @@ void EnvironmentManager::createBatchFile(const string& filename, bool hideShell,
         batchFile << " && start \"" << filename << "\" " << applicationPath;
     }
 
-    if (hideShell)
-        batchFile << "\"\n@ECHO ON\n";
+    batchFile << "\"\r\n@ECHO ON\r\n";
 
     batchFile.close();
 
