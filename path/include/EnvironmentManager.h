@@ -29,7 +29,8 @@ public:
     void populateEntries();
     void printEntries() const;
     void readEntriesFromFile(const string& filename);
-    void createBatchFile(const string& filename, bool hideShell) const;
+    void createBatchFile(const string& filename, bool hideShell, const Json::Value& root) const;
+
 };
 
 #endif // ENVIRONMENTMANAGER_H

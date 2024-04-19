@@ -66,6 +66,7 @@ void EnvironmentManager::readEntriesFromFile(const string& filename) {
     string outputfile;
     bool hideshell = false;
 
+    // Extracting data from JSON
     if (root.isMember("outputfile")) {
         outputfile = root["outputfile"].asString();
     } else {
@@ -118,10 +119,10 @@ void EnvironmentManager::readEntriesFromFile(const string& filename) {
         }
     }
 
-    createBatchFile(outputfile, hideshell);
+    createBatchFile(outputfile, hideshell, root);
 }
 
-void EnvironmentManager::createBatchFile(const string& filename, bool hideShell) const {
+void EnvironmentManager::createBatchFile(const string& filename, bool hideShell, const Json::Value& root) const {
     ofstream batchFile(filename);
     if (!batchFile.is_open()) {
         cerr << "Error: Unable to create batch file " << filename << endl;
@@ -157,13 +158,20 @@ void EnvironmentManager::createBatchFile(const string& filename, bool hideShell)
         }
     }
 
+    
+
     // Schreiben der PATH-Befehle in die Batch-Datei
     if (!pathCommands.empty()) {
-        batchFile << " && set PATH=" << pathCommands << ";%PATH%\"\n";
+        batchFile << " && set PATH=" << pathCommands << ";%PATH%";
+    }
+
+   string applicationPath = root["application"].asString();
+    if (!applicationPath.empty()) {
+        batchFile << " && start \"" << filename << "\" " << applicationPath;
     }
 
     if (hideShell)
-        batchFile << "@ECHO ON\n";
+        batchFile << "\"\n@ECHO ON\n";
 
     batchFile.close();
 
