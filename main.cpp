@@ -1,340 +1,54 @@
+#include <options.h>
+#include <EnvironmentManager.h>
 #include <iostream>
 #include <fstream>
-#include <filesystem>
-#include <jsoncpp/json/json.h>
 #include <vector>
 #include <string>
-#include <cstdlib> // for getenv
 #include <sstream>
-#include <unistd.h> // for environ
-//#include <options.h> //commandlineArguments
-#include <config.h>
-//following includes are for getopt 
-#include <stdlib.h>
+#include <filesystem>
+#include <cstdlib>
+#include <jsoncpp/json/json.h>
 #include <getopt.h>
-#include <stdio.h>
+#include <config.h>
+
 
 using namespace std;
-namespace fs = std::filesystem;
+namespace fs = filesystem;
 
 
-//Helptext and getopt made by LW 
-// Helptext for the Programm - Requirement Task 1, 2, 3
-const char * const Helptxt = {
-    "Create a Windows Batch file based on the provided JSON configuration.\n" \
-    "Usage: options [OPTIONS] file ... \n" \
-    "	-h, --help         Hier die Funktion, die beschrieben werden muessen\n" \
-    "	-o, --output=FILENAME     Set the output file name\n" \
-    "	-v, --version             Show version information\n" \
-    "\n" \
-    "Author team: \n" 
-	"David Prinz david.prinz1123@gmail.com\n"
-	"Tobias Stoppelkamp tobias.stoppelkamp05@gmail.com\n"
-	"Lion Wicki lionwicki@gmail.com\n"
-	"Philipp Assfalg philippassfalg2005@gmail.com\n"
-};
-
-const char * Version ="Version 1.0\n";  
-
-void printHelptxt() {
-printf("%s", Helptxt);
-}
-
-void printVersion() {
-printf("%s", Version);	
-}
-
-void processOptions(int argc, char **argv) {
-	
-int option_index = 0;
-
-//Defines longopt command-line arguments 
-static const struct option longopts[] = 
-{
-	// takes no arguments --> hier koennte man das inputfile definieren !!!
-	{ "help", no_argument, NULL, 'h' }, 
-	{ "version", no_argument, NULL, 'v' }, 
-	{0,0,0,0} // Termination
-};
-
-while ((option_index = getopt_long(argc, argv, "hv", longopts, NULL)) != -1) {
-	switch (option_index) {
-		case 'h':
-			printHelptxt();
-			exit(0);
-		case 'v':
-			printVersion();
-			exit(0);
-		case '?': //Error if invalid command
-			fprintf(stderr, "Invalid command-line arguments. Use --help or -h for usage information.\n");
-			exit(1);
-		default:
-		// No default defined maybe add something here
-			break;
-		}
-	}
-}
-
-
-// In this Part the Program is checking if hideshell is true or not
-bool hideshellcheck(const Json::Value& root) {
-    return root.get("hideshell", false).asBool();
-}
-
-class EnvironmentEntry {
-public:
-    string name;
-    string value;
-    string type;
-
-    EnvironmentEntry(const string& n, const string& v, const string& t)
-        : name(n), value(v), type(t) {}
-};
-class EnvironmentManager {
-private:
-    vector<EnvironmentEntry> entries;
-
-public:
-    void populateEntries() {
-        char** env = environ;  // Fixed: Access to global environ
-        for (int i = 0; env[i] != nullptr; ++i) {
-            string envVar(env[i]);
-            size_t equalsPos = envVar.find('=');
-            if (equalsPos != string::npos) {
-                string name = envVar.substr(0, equalsPos);
-                string value = envVar.substr(equalsPos + 1);
-                entries.push_back(EnvironmentEntry(name, value, "ENV"));
-            }
-        }
-
-        string pathEnv = getenv("PATH");
-        istringstream pathStream(pathEnv);
-        string path;
-        while (getline(pathStream, path, fs::path::preferred_separator)) {
-            for (const auto& entry : fs::directory_iterator(path)) {
-                if (fs::is_regular_file(entry.path()) && 
-                (fs::status(entry.path()).permissions() & fs::perms::owner_exec) != fs::perms::none) {
-                    string appName = entry.path().filename().string();
-                    string appPath = entry.path().string();
-                    entries.push_back(EnvironmentEntry("application", appName + " " + appPath, "EXE"));
-                }
-            }
-        }
-
-        entries.push_back(EnvironmentEntry("PATH", pathEnv, "PATH"));
-    }
-
-    void printEntries() const {
-        for (const auto& entry : entries) {
-            cout << "Type: " << entry.type << ", Name: " << entry.name << ", Value: " << entry.value << "\n";
-        }
-    }
-
-    void readEntriesFromFile(const string& filename) {
-        ifstream file(filename);
-        if (!file.is_open()) {
-            cerr << "Error: Unable to open file " << filename << endl;
-            return;
-        }
-
-        string line;
-        string outputfile;
-        bool hideshell = false;
-
-        while (getline(file, line)) {
-            if (line.find("outputfile") != string::npos) {
-                size_t pos = line.find(":");
-                if (pos != string::npos)
-                    outputfile = line.substr(pos + 1);
-            }
-            if (line.find("hideshell") != string::npos) {
-                size_t pos = line.find(":");
-                if (pos != string::npos)
-                    hideshell = (line.substr(pos + 1) == "true") ? true : false;
-            }
-        }
-
-        if (!outputfile.empty()) {
-            createBatchFile(outputfile, "cmd.exe", hideshell);
-        } else {
-            cerr << "Error: 'outputfile' not found in the file." << endl;
-        }
-    }
-
-    void createBatchFile(const string& filename, const string& consolePath, bool hideShell) const {
-        ofstream batchFile(filename + ".bat");
-        if (!batchFile.is_open()) {
-            cerr << "Error: Unable to create batch file " << filename << ".bat" << endl;
-            return;
-        }
-
-        batchFile << (hideShell ? "@ECHO OFF\n" : "@ECHO ON\n");
-        batchFile << "start \"\" \"" << consolePath << "\"" << (hideShell ? " /B" : "") << "\n";
-
-        if (hideShell)
-            batchFile << "exit\n";
-
-        batchFile.close();
-
-        cout << "Batch file " << filename << ".bat" << " created successfully." << endl;
-    }
-};
-/*
-void processJSONFile(const string& filename) {
-    ifstream ifs(path.string());
-    Json::Reader reader;
-    Json::Value root;
-    if(!reader.parse(ifs, root)) {
-        cerr << "Datei ist ungueltig: " << path.string() << endl;
-        return EXIT_FAILURE;
-    }
-    //!!
-    //Hier würde dann der Code von David hinkommen
-    //!!
-}
-*/
-void processJSONFile(const string& filename) {
-    ifstream ifs(filename);
-    Json::Reader reader;
-    Json::Value root;
-    int lineNumber = 0;
-    string line;
-
-    while (getline(ifs, line)) {
-        lineNumber++;
-        if (!reader.parse(line, root)) {
-            cerr << "Error in JSON file: " << filename << " at line " << lineNumber << endl;
-            cerr << "Failed to parse line: " << line << endl;
-            exit(EXIT_FAILURE);
-        }
-    }
-}
 
 int main(const int argc, char **argv) {
-    //comand line Arguents
-    processOptions(argc, argv);
-
-    if(argc != 2) {
-        cerr << "Bitte eine Datei angeben!" << endl;
+    if (argc < 2) {
+        cerr << "Bitte mindestens eine Datei angeben!" << endl;
         return EXIT_FAILURE;
     }
-    else {
-        auto path = fs::weakly_canonical(argv[1]);
 
-        if(!fs::exists(path)) {
+    // Kommandozeilenargumente verarbeiten
+    processOptions(argc, argv);
+
+    for (int i = 1; i < argc; ++i) { // Starten bei 1, um den Programmpfad zu überspringen
+        auto path = fs::weakly_canonical(argv[i]);
+
+        if (!fs::exists(path)) {
             cerr << "Datei existiert nicht: " << path.string() << endl;
-            return EXIT_FAILURE;
+            continue; // Mit der nächsten Datei fortfahren
         }
-
-        processJSONFile(path.string());  // Check JSON file before parsing
-
-        ifstream ifs(path.string());
-        Json::Reader reader;
-        Json::Value root;
-
-        if(!reader.parse(ifs, root)) {
-            cerr << "Datei ist ungueltig: " << path.string() << endl;
-            return EXIT_FAILURE;
-        }
-
 
         ifstream ifs(path.string());
 
         Json::Reader reader;
         Json::Value root;
-        if(!reader.parse(ifs, root)) {
+        if (!reader.parse(ifs, root)) {
             cerr << "Datei ist ungueltig: " << path.string() << endl;
-            return EXIT_FAILURE;
+            continue; // Mit der nächsten Datei fortfahren
         }
-        /*
-        // Iterate through each JSON file and process it 
-        for (int i = 1; i < argc; ++i){
-            processJSONFile(argv[i]);
-        }
-        */
-        // Line 144 - 185 Part from David Prinz 
-        // Requirement funtional Task 8
-        // The file name of the batch file is written in this part of the code. The information about the name is taken from the "outputfile" of the json file. 
-        const Json::Value entries = root["entries"];
-        string dateiname = root["outputfile"].asString();
-        ofstream batchFile(dateiname);
-         cout << "Es wurde die Datei:'"<<dateiname<<"'erstllt.Sie finden sie im build Ordner des Programms."<<endl;
-        batchFile << "@ECHO OFF\n";
-        // Requirement funtional Task 9
-        // In this part of the code, the information as to whether the shell should be hidden is taken from the "hideshell" entry in the json file. If the shell is to be hidden, "/c" is written, otherwise "/k" 
-        if (hideshellcheck(root)) {
-            batchFile << "C:\\Windows\\System32\\cmd.exe /c \""; //Path System32 hinzugefügt
-        } else {
-            batchFile << "C:\\Windows\\System32\\cmd.exe /k \""; //Path System32 hinzugefügt
-        }
-        // Requirement funtional Task 10
-        // In this part of the code, a for-loop is used to read and save any number of entries under a JASON array "entries"
-        if(entries.isArray()) {
-            string batchCommands = "";
-            bool firstCommand = true; //Tracks the first command
-            for (const auto& entry : entries) {
-                // Check entry type
-                string type = entry["type"].asString();
-                //Process based on entry type
-                // Requirement funtional Task 11
-                //In this part of the code, entries of type "ENV" are stored with their "key" and "value".
-                if(entry["type"].asString()=="ENV") {
-                    string key = entry["key"].asString();
-                    string value = entry["value"].asString();
-                    batchCommands += " && set " + key + "=" + value ;
-                }
-                // Requirement funtional Task 12
-                //In this part of the code, entries of type "EXE" are stored with their call "command"
-                if(entry["type"].asString()=="EXE") {
-                    string command = entry["command"].asString();
-                   batchCommands += command;
-                }
-                // Requirement funtional Task 13
-                // In this part of the code, entries of type "PATH" are stored with their file path ("path")
-                if(type == "PATH") {
-            string path = entry["path"].asString();
-            // For PATH type, do nothing here, it will be handled later
-        }
+
+        // Eine Instanz der EnvironmentManager-Klasse erstellen
+        EnvironmentManager envManager;
+
+        // Einträge aus der JSON-Datei lesen und verarbeiten
+        envManager.readEntriesFromFile(path.string());
     }
 
-    // Handling PATH entries separately to construct the path string
-    string pathCommands = "";
-    for (const auto& entry : entries) {
-        if(entry["type"].asString() == "PATH") {
-            string path = entry["path"].asString();
-            if (!path.empty()) {
-                if (!pathCommands.empty()) {
-                    pathCommands += ";";
-                }
-                pathCommands += path;
-            }
-        }
-    }
-
-    // Combine the pathCommands with the batchCommands
-    if (!pathCommands.empty()) {
-        batchCommands += " && set path=" + pathCommands + ";%path%";
-    }
-
-    // Remove leading "&&" if present
-    if (!batchCommands.empty() && batchCommands.substr(0, 3) == " &&") {
-        batchCommands = batchCommands.substr(3);
-    }
-
-    /*if (dateiname.size() > 4 && dateiname.substr(dateiname.size() - 4) == ".bat") {
-        dateiname = dateiname.substr(0, dateiname.size() - 4);
-    }
-    ofstream batchFile(dateiname + ".bat");*/
-
-    string applicationPath = root["application"].asString();
-    if (!applicationPath.empty()) {
-        batchCommands += " && start \"" + dateiname + "\" " + applicationPath;
-    }
-
-            batchFile << batchCommands;
-            batchFile << "\"\n";
-            batchFile <<"@ECHO ON";
-        }
-        return EXIT_SUCCESS;
-    }
+    return EXIT_SUCCESS;
 }

@@ -31,7 +31,7 @@ include_directories(${PROJECT_SOURCE_DIR}/path/include)
 set(SOURCES
 	path/src/options.cpp
 	path/src/EnvironmentManager.cpp
-    main2.cpp
+    main.cpp
 
 )
 

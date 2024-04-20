@@ -69,8 +69,8 @@ build CMakeFiles/JsoninBatch2023.dir/path/src/EnvironmentManager.cpp.o: CXX_COMP
   OBJECT_DIR = CMakeFiles/JsoninBatch2023.dir
   OBJECT_FILE_DIR = CMakeFiles/JsoninBatch2023.dir/path/src
 
-build CMakeFiles/JsoninBatch2023.dir/main2.cpp.o: CXX_COMPILER__JsoninBatch2023_Debug /home/tobias/projects/C++/jsoncpp/main2.cpp || cmake_object_order_depends_target_JsoninBatch2023
-  DEP_FILE = CMakeFiles/JsoninBatch2023.dir/main2.cpp.o.d
+build CMakeFiles/JsoninBatch2023.dir/main.cpp.o: CXX_COMPILER__JsoninBatch2023_Debug /home/tobias/projects/C++/jsoncpp/main.cpp || cmake_object_order_depends_target_JsoninBatch2023
+  DEP_FILE = CMakeFiles/JsoninBatch2023.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++20
   INCLUDES = -I/home/tobias/projects/C++/jsoncpp/include -I/home/tobias/projects/C++/jsoncpp/path/include
   OBJECT_DIR = CMakeFiles/JsoninBatch2023.dir
@@ -84,7 +84,7 @@ build CMakeFiles/JsoninBatch2023.dir/main2.cpp.o: CXX_COMPILER__JsoninBatch2023_
 #############################################
 # Link the executable JsoninBatch2023
 
-build JsoninBatch2023: CXX_EXECUTABLE_LINKER__JsoninBatch2023_Debug CMakeFiles/JsoninBatch2023.dir/path/src/options.cpp.o CMakeFiles/JsoninBatch2023.dir/path/src/EnvironmentManager.cpp.o CMakeFiles/JsoninBatch2023.dir/main2.cpp.o | path/libpathlib.a || path/libpathlib.a
+build JsoninBatch2023: CXX_EXECUTABLE_LINKER__JsoninBatch2023_Debug CMakeFiles/JsoninBatch2023.dir/path/src/options.cpp.o CMakeFiles/JsoninBatch2023.dir/path/src/EnvironmentManager.cpp.o CMakeFiles/JsoninBatch2023.dir/main.cpp.o | path/libpathlib.a || path/libpathlib.a
   FLAGS = -g
   LINK_LIBRARIES = path/libpathlib.a  -ljsoncpp
   OBJECT_DIR = CMakeFiles/JsoninBatch2023.dir
