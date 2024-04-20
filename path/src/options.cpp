@@ -7,7 +7,6 @@ const char * const Helptxt = {
     "Create a Windows Batch file based on the provided JSON configuration.\r\n" \
     "Usage: options [OPTIONS] file ... \r\n" \
     "	-h, --help         Hier die Funktion, die beschrieben werden muessen\r\n" \
-    "	-o, --output=FILENAME     Set the output file name\r\n" \
     "	-v, --version             Show version information\r\n" \
     "\r\n" \
     "Author team: \r\n" 
