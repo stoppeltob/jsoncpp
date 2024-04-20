@@ -99,25 +99,25 @@ void EnvironmentManager::readEntriesFromFile(const string& filename) {
         if (type == "ENV" || type == "EXE" || type == "PATH") {
             if (type == "ENV") {
                 if (!entry.isMember("key") || !entry.isMember("value")) {
-                    cerr << "Error at line " << line_number << ": Entry of type 'ENV' requires 'key' and 'value' fields." << endl;
+                    cerr << "Error at line " << line_number << ": Entry of type 'ENV' requires 'key' and 'value' fields. In " << filename << endl;
                     return;
                 }
                 entries.push_back(EnvironmentEntry(entry["key"].asString(), entry["value"].asString(), "ENV"));
             } else if (type == "EXE") {
                 if (!entry.isMember("command")) {
-                    cerr << "Error at line " << line_number << ": Entry of type 'EXE' requires 'command' field." << endl;
+                    cerr << "Error at line " << line_number << ": Entry of type 'EXE' requires 'command' field. In " << filename << endl;
                     return;
                 }
                 entries.push_back(EnvironmentEntry("application", entry["command"].asString(), "EXE"));
             } else if (type == "PATH") {
                 if (!entry.isMember("path")) {
-                    cerr << "Error at line " << line_number << ": Entry of type 'PATH' requires 'path' field." << endl;
+                    cerr << "Error at line " << line_number << ": Entry of type 'PATH' requires 'path' field. In " << filename << endl;
                     return;
                 }
                 entries.push_back(EnvironmentEntry("PATH", entry["path"].asString(), "PATH"));
             }
         } else {
-            cerr << "Error at line " << line_number << ": Unknown entry type '" << type << "' in JSON file." << endl;
+            cerr << "Error at line " << line_number << ": Unknown entry type '" << type << "' in JSON file" << filename << "." << endl;
             return;
         }
     }
