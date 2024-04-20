@@ -193,8 +193,25 @@ void processJSONFile(const string& filename) {
     //!!
 }
 */
+void processJSONFile(const string& filename) {
+    ifstream ifs(filename);
+    Json::Reader reader;
+    Json::Value root;
+    int lineNumber = 0;
+    string line;
+
+    while (getline(ifs, line)) {
+        lineNumber++;
+        if (!reader.parse(line, root)) {
+            cerr << "Error in JSON file: " << filename << " at line " << lineNumber << endl;
+            cerr << "Failed to parse line: " << line << endl;
+            exit(EXIT_FAILURE);
+        }
+    }
+}
+
 int main(const int argc, char **argv) {
-    //commandlineArguments
+    //comand line Arguents
     processOptions(argc, argv);
 
     if(argc != 2) {
@@ -202,13 +219,24 @@ int main(const int argc, char **argv) {
         return EXIT_FAILURE;
     }
     else {
-
         auto path = fs::weakly_canonical(argv[1]);
 
         if(!fs::exists(path)) {
             cerr << "Datei existiert nicht: " << path.string() << endl;
             return EXIT_FAILURE;
         }
+
+        processJSONFile(path.string());  // Check JSON file before parsing
+
+        ifstream ifs(path.string());
+        Json::Reader reader;
+        Json::Value root;
+
+        if(!reader.parse(ifs, root)) {
+            cerr << "Datei ist ungueltig: " << path.string() << endl;
+            return EXIT_FAILURE;
+        }
+
 
         ifstream ifs(path.string());
 
