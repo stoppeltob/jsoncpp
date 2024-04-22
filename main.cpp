@@ -15,7 +15,12 @@
 using namespace std;
 namespace fs = filesystem;
 
-
+/**
+ * Function to process command-line options.
+ * @param argc Number of command-line arguments.
+ * @param argv Array of command-line arguments.
+ * main function for the programm
+*/
 
 int main(const int argc, char **argv) {
     if (argc < 2) {
@@ -23,15 +28,19 @@ int main(const int argc, char **argv) {
         return EXIT_FAILURE;
     }
 
-    // Kommandozeilenargumente verarbeiten
     processOptions(argc, argv);
+    
+    /**
+     * This block iterates over command-line arguments, reads JSON files, and processes their contents using an EnvironmentManager instance.
+     * made by Tobias Stoppelkamp 
+    */
 
-    for (int i = 1; i < argc; ++i) { // Starten bei 1, um den Programmpfad zu überspringen
+    for (int i = 1; i < argc; ++i) { // Start at 1 to skip the program path
         auto path = fs::weakly_canonical(argv[i]);
 
         if (!fs::exists(path)) {
-            cerr << "Datei existiert nicht: " << path.string() << endl;
-            continue; // Mit der nächsten Datei fortfahren
+            cerr << "File does not exist: " << path.string() << endl;
+            continue; 
         }
 
         ifstream ifs(path.string());
@@ -39,14 +48,14 @@ int main(const int argc, char **argv) {
         Json::Reader reader;
         Json::Value root;
         if (!reader.parse(ifs, root)) {
-            cerr << "Datei ist ungueltig: " << path.string() << endl;
-            continue; // Mit der nächsten Datei fortfahren
+            cerr << "File is invalid: " << path.string() << endl;
+            continue; 
         }
 
-        // Eine Instanz der EnvironmentManager-Klasse erstellen
+        // Create an instance of the EnvironmentManager
         EnvironmentManager envManager;
 
-        // Einträge aus der JSON-Datei lesen und verarbeiten
+        // Read and process entries from the JSON file
         envManager.readEntriesFromFile(path.string());
     }
 
