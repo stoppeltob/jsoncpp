@@ -234,7 +234,7 @@ void EnvironmentManager::createBatchFile(const string& filename, bool hideShell,
 
     // Write PATH commands to the batch file
     if (!pathCommands.empty()) {
-        batchFile << " && set PATH=" << pathCommands << ";%PATH%";
+        batchFile << " && set path=" << pathCommands << ";%path%";
     }
 
     // Additional application command to be written to the batch file
