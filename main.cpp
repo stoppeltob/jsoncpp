@@ -32,7 +32,7 @@ int main(const int argc, char **argv) {
     
     /**
      * This block iterates over command-line arguments, reads JSON files, and processes their contents using an EnvironmentManager instance.
-     * made by Lion Wicki &Tobias Stoppelkamp 
+     * made by Lion Wicki & Tobias Stoppelkamp 
     */
 
     for (int i = 1; i < argc; ++i) { // Start at 1 to skip the program path
