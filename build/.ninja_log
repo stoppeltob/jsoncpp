@@ -1,0 +1,9 @@
+# ninja log v5
+1	69	1713890889482165393	path/CMakeFiles/pathlib.dir/src/pathtest.cpp.o	2bb29803c4b88e6e
+0	144	1713890889562165411	CMakeFiles/JsoninBatch2023.dir/path/src/options.cpp.o	e9baf7a7b3b82a6a
+2	146	1713890889562165411	path/CMakeFiles/pathlib.dir/src/options.cpp.o	6ce8186424ed998
+1	2879	1713890892292165986	CMakeFiles/JsoninBatch2023.dir/main.cpp.o	116404f0a41c1ab3
+1	3056	1713890892472166007	CMakeFiles/JsoninBatch2023.dir/path/src/EnvironmentManager.cpp.o	a711c7bcd24fe84e
+2	3075	1713890892492165954	path/CMakeFiles/pathlib.dir/src/EnvironmentManager.cpp.o	a521bae0ca86cf6d
+3075	3123	1713890892542165821	path/libpathlib.a	3249965453a8e7d
+3123	3387	1713890892802165135	JsoninBatch2023	a2554ced0bd7edf8
