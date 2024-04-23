@@ -24,7 +24,7 @@ namespace fs = filesystem;
 
 int main(const int argc, char **argv) {
     if (argc < 2) {
-        cerr << "Bitte mindestens eine Datei angeben!" << endl;
+        cerr << "Please give at least one file!" << endl;
         return EXIT_FAILURE;
     }
 
@@ -32,7 +32,7 @@ int main(const int argc, char **argv) {
     
     /**
      * This block iterates over command-line arguments, reads JSON files, and processes their contents using an EnvironmentManager instance.
-     * made by Tobias Stoppelkamp 
+     * made by Lion Wicki &Tobias Stoppelkamp 
     */
 
     for (int i = 1; i < argc; ++i) { // Start at 1 to skip the program path
